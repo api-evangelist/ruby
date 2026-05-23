@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/draft-00/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ruby/main/json-structure/rubygems-registry-gem-structure.json",
+  "name": "Gem",
+  "type": "object",
+  "description": "Structural definition of a rubygems.org Gem entity.",
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "platform": { "type": "string" },
+    "downloads": { "type": "int64" },
+    "version_downloads": { "type": "int64" },
+    "authors": { "type": "string" },
+    "info": { "type": "string" },
+    "licenses": { "type": "array", "items": { "type": "string" } },
+    "yanked": { "type": "boolean" },
+    "sha": { "type": "string" },
+    "project_uri": { "type": "string" },
+    "gem_uri": { "type": "string" },
+    "homepage_uri": { "type": "string" },
+    "documentation_uri": { "type": "string" },
+    "source_code_uri": { "type": "string" },
+    "bug_tracker_uri": { "type": "string" },
+    "changelog_uri": { "type": "string" },
+    "funding_uri": { "type": "string" },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "development": { "type": "array", "items": { "$ref": "#/definitions/Dependency" } },
+        "runtime": { "type": "array", "items": { "$ref": "#/definitions/Dependency" } }
+      }
+    }
+  },
+  "definitions": {
+    "Dependency": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "requirements": { "type": "string" }
+      }
+    }
+  }
+}

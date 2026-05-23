@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ruby/main/json-schema/rubygems-registry-owner-schema.json",
+  "title": "Owner",
+  "description": "A rubygems.org user who has push rights on a gem.",
+  "type": "object",
+  "required": ["handle"],
+  "properties": {
+    "id": { "type": "integer" },
+    "handle": { "type": "string", "description": "rubygems.org username." },
+    "email": { "type": "string", "format": "email" }
+  }
+}

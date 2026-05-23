@@ -1,0 +1,433 @@
+aid: ruby
+name: Ruby Programming Language and Popular API Gems
+description: >-
+  A profile of the Ruby programming language ecosystem from an API perspective:
+  the language and its standard library HTTP surface (Net::HTTP), the
+  rubygems.org package registry and its public v1/v2 REST API, Bundler,
+  RBS type signatures, popular HTTP/REST client gems (Faraday, http.rb,
+  HTTParty, Excon, Typhoeus, REST Client, HTTPClient), and the major
+  Ruby frameworks used to build APIs (Rails API mode, Sinatra, Grape).
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Programming Language
+  - Ruby
+  - HTTP
+  - REST
+  - API Clients
+  - Frameworks
+  - Libraries
+  - Package Registry
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/ruby/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+  - aid: ruby:net-http
+    name: Net::HTTP (Ruby Standard Library)
+    description: >-
+      The HTTP client class shipped with the Ruby standard library. Provides
+      class and instance methods for GET, POST, PUT, DELETE, HEAD, PATCH,
+      OPTIONS, TRACE plus WebDAV methods (COPY, LOCK, MKCOL, MOVE, PROPFIND,
+      PROPPATCH, UNLOCK), TLS, proxy support, and configurable timeouts.
+      Backs many higher-level gems such as Faraday's default adapter.
+    humanURL: https://docs.ruby-lang.org/en/master/Net/HTTP.html
+    tags:
+      - HTTP Client
+      - Standard Library
+      - Built-In
+    properties:
+      - type: Documentation
+        url: https://docs.ruby-lang.org/en/master/Net/HTTP.html
+      - type: GitHub
+        url: https://github.com/ruby/net-http
+  - aid: ruby:rubygems-registry-api
+    name: RubyGems.org Registry API v1
+    description: >-
+      Public REST API for the rubygems.org package registry. Endpoints cover
+      gems, versions, downloads, owners, profiles, web hooks, activity, API
+      keys, and OIDC/trusted-publishing token exchange. Authentication is
+      via an API key in the Authorization header with optional OTP header
+      for MFA. Responses available as JSON or YAML.
+    humanURL: https://guides.rubygems.org/rubygems-org-api/
+    baseURL: https://rubygems.org/api/v1
+    tags:
+      - Package Registry
+      - REST
+      - Public API
+    properties:
+      - type: Documentation
+        url: https://guides.rubygems.org/rubygems-org-api/
+      - type: APIReference
+        url: https://guides.rubygems.org/rubygems-org-api/
+      - type: Authentication
+        url: https://guides.rubygems.org/api-key-scopes/
+      - type: GitHub
+        url: https://github.com/rubygems/rubygems.org
+      - type: SDK
+        url: https://github.com/rubygems/gems
+      - type: OpenAPI
+        url: openapi/rubygems-registry-openapi.yml
+      - type: JSONSchema
+        url: json-schema/rubygems-registry-gem-schema.json
+      - type: JSONSchema
+        url: json-schema/rubygems-registry-version-schema.json
+      - type: JSONSchema
+        url: json-schema/rubygems-registry-owner-schema.json
+      - type: JSONSchema
+        url: json-schema/rubygems-registry-webhook-schema.json
+      - type: JSONStructure
+        url: json-structure/rubygems-registry-gem-structure.json
+      - type: JSONStructure
+        url: json-structure/rubygems-registry-version-structure.json
+      - type: Example
+        url: examples/rubygems-registry-get-gem-example.json
+      - type: Example
+        url: examples/rubygems-registry-list-versions-example.json
+      - type: Example
+        url: examples/rubygems-registry-list-owners-example.json
+      - type: Example
+        url: examples/rubygems-registry-search-example.json
+      - type: Example
+        url: examples/rubygems-registry-create-webhook-example.json
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-gems.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-versions.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-downloads.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-owners.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-profiles.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-webhooks.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-activity.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-api-keys.yaml
+      - type: NaftikoCapability
+        url: capabilities/rubygems-registry-oidc.yaml
+  - aid: ruby:rubygems-registry-api-v2
+    name: RubyGems.org Registry API v2
+    description: >-
+      Version 2 of the rubygems.org registry API. Adds gem version detail
+      endpoints with optional platform query parameter, returning richer
+      metadata than v1.
+    humanURL: https://guides.rubygems.org/rubygems-org-api-v2/
+    baseURL: https://rubygems.org/api/v2
+    tags:
+      - Package Registry
+      - REST
+      - Public API
+    properties:
+      - type: Documentation
+        url: https://guides.rubygems.org/rubygems-org-api-v2/
+      - type: APIReference
+        url: https://guides.rubygems.org/rubygems-org-api-v2/
+  - aid: ruby:bundler
+    name: Bundler
+    description: >-
+      Dependency manager for Ruby. Reads a Gemfile, resolves and installs
+      gems from rubygems.org or alternate sources, and writes Gemfile.lock
+      for reproducible installs across environments. Ships as part of
+      modern Ruby distributions.
+    humanURL: https://bundler.io/
+    tags:
+      - Dependency Management
+      - CLI
+      - Package Manager
+    properties:
+      - type: Documentation
+        url: https://bundler.io/docs.html
+      - type: GitHub
+        url: https://github.com/rubygems/rubygems
+  - aid: ruby:rbs
+    name: RBS (Ruby Type Signatures)
+    description: >-
+      A language for describing the structure of Ruby programs. Lets
+      developers declare classes, modules, method signatures, instance
+      variables and inheritance in separate .rbs files so type checkers
+      and IDE tooling can verify code against an explicit contract.
+    humanURL: https://github.com/ruby/rbs
+    tags:
+      - Type System
+      - Schema
+      - Contracts
+    properties:
+      - type: GitHub
+        url: https://github.com/ruby/rbs
+      - type: Documentation
+        url: https://github.com/ruby/rbs#readme
+  - aid: ruby:faraday
+    name: Faraday
+    description: >-
+      Simple but flexible HTTP client library with a common interface over
+      many adapters (Net::HTTP, Typhoeus, Patron, Excon, HTTPClient, and
+      others) and Rack-style middleware for request/response processing.
+    humanURL: https://lostisland.github.io/faraday/
+    tags:
+      - HTTP Client
+      - Middleware
+    properties:
+      - type: Documentation
+        url: https://lostisland.github.io/faraday/
+      - type: GitHub
+        url: https://github.com/lostisland/faraday
+  - aid: ruby:httparty
+    name: HTTParty
+    description: >-
+      HTTP client gem that "makes consuming RESTful web services dead easy"
+      via a class-level DSL. Wraps Net::HTTP with parsing, query handling,
+      and authentication helpers.
+    humanURL: https://github.com/jnunemaker/httparty
+    tags:
+      - HTTP Client
+      - REST
+    properties:
+      - type: GitHub
+        url: https://github.com/jnunemaker/httparty
+  - aid: ruby:http-rb
+    name: http.rb
+    description: >-
+      Fast Ruby HTTP client built on the llhttp parser with a chainable
+      request-building API, streaming bodies, persistent connections, and
+      fine-grained timeout control.
+    humanURL: https://github.com/httprb/http
+    tags:
+      - HTTP Client
+      - Streaming
+    properties:
+      - type: GitHub
+        url: https://github.com/httprb/http
+  - aid: ruby:excon
+    name: Excon
+    description: >-
+      EXtended HTTP(S) CONnections library focused on performance,
+      persistent connections, and predictable behavior. Used as an
+      adapter under Faraday and inside Fog/cloud SDKs.
+    humanURL: https://github.com/excon/excon
+    tags:
+      - HTTP Client
+    properties:
+      - type: GitHub
+        url: https://github.com/excon/excon
+  - aid: ruby:typhoeus
+    name: Typhoeus
+    description: >-
+      Libcurl-based HTTP client built for running HTTP requests in
+      parallel. Pairs well with Hydra for fan-out integrations against
+      many APIs at once.
+    humanURL: https://github.com/typhoeus/typhoeus
+    tags:
+      - HTTP Client
+      - Parallel
+    properties:
+      - type: GitHub
+        url: https://github.com/typhoeus/typhoeus
+  - aid: ruby:rest-client
+    name: REST Client
+    description: >-
+      Simple HTTP and REST client for Ruby inspired by Sinatra's
+      microframework style. Provides class-level GET/POST/PUT/DELETE
+      helpers.
+    humanURL: https://github.com/rest-client/rest-client
+    tags:
+      - HTTP Client
+      - REST
+    properties:
+      - type: GitHub
+        url: https://github.com/rest-client/rest-client
+  - aid: ruby:httpclient
+    name: HTTPClient
+    description: >-
+      Long-standing Ruby HTTP client providing "the functionality of
+      libwww-perl (LWP) in Ruby". Supports keep-alive, cookies, proxies,
+      and SSL.
+    humanURL: https://github.com/nahi/httpclient
+    tags:
+      - HTTP Client
+    properties:
+      - type: GitHub
+        url: https://github.com/nahi/httpclient
+  - aid: ruby:rails-api
+    name: Ruby on Rails (API Mode)
+    description: >-
+      Rails generated with the --api flag boots a slimmer middleware stack
+      and an ApplicationController inheriting from ActionController::API
+      (rather than ActionController::Base), making Rails a first-class
+      JSON API framework while keeping Active Record, routing, and
+      generators.
+    humanURL: https://guides.rubyonrails.org/api_app.html
+    tags:
+      - Web Framework
+      - REST
+      - JSON API
+    properties:
+      - type: Documentation
+        url: https://guides.rubyonrails.org/api_app.html
+      - type: GitHub
+        url: https://github.com/rails/rails
+      - type: Website
+        url: https://rubyonrails.org/
+  - aid: ruby:sinatra
+    name: Sinatra
+    description: >-
+      "DSL for quickly creating web applications in Ruby with minimal
+      effort." Widely used to stand up small HTTP APIs and microservices
+      without the ceremony of a full-stack framework.
+    humanURL: https://sinatrarb.com/
+    tags:
+      - Web Framework
+      - Microframework
+      - DSL
+    properties:
+      - type: Documentation
+        url: https://sinatrarb.com/documentation.html
+      - type: GitHub
+        url: https://github.com/sinatra/sinatra
+  - aid: ruby:grape
+    name: Grape
+    description: >-
+      "Opinionated framework for creating REST-like APIs in Ruby." Provides
+      a routing DSL with parameter validation, versioning, and
+      content-negotiation helpers; runs standalone or mounted in Rails.
+    humanURL: https://github.com/ruby-grape/grape
+    tags:
+      - Web Framework
+      - REST
+      - DSL
+    properties:
+      - type: GitHub
+        url: https://github.com/ruby-grape/grape
+      - type: Documentation
+        url: https://github.com/ruby-grape/grape#readme
+common:
+  - type: SpectralRules
+    url: rules/rubygems-registry-rules.yml
+  - type: Vocabulary
+    url: vocabulary/ruby-vocabulary.yml
+  - type: JSON-LD
+    url: json-ld/ruby-context.jsonld
+  - type: Website
+    url: https://www.ruby-lang.org/
+  - type: Documentation
+    url: https://docs.ruby-lang.org/en/
+  - type: GettingStarted
+    url: https://www.ruby-lang.org/en/documentation/quickstart/
+  - type: Downloads
+    url: https://www.ruby-lang.org/en/downloads/
+  - type: ReleaseNotes
+    url: https://www.ruby-lang.org/en/news/
+  - type: Security
+    url: https://www.ruby-lang.org/en/security/
+  - type: Community
+    url: https://www.ruby-lang.org/en/community/
+  - type: Blog
+    url: https://www.ruby-lang.org/en/news/
+  - type: GitHubOrganization
+    url: https://github.com/ruby
+  - type: GitHubOrganization
+    url: https://github.com/rubygems
+  - type: GitHubOrganization
+    url: https://github.com/rails
+  - type: SourceCode
+    url: https://github.com/ruby/ruby
+  - type: Registry
+    url: https://rubygems.org/
+  - type: StatusPage
+    url: https://status.rubygems.org/
+  - type: Blog
+    url: https://blog.rubygems.org/
+  - type: License
+    url: https://www.ruby-lang.org/en/about/license.txt
+  - type: Features
+    data:
+      - name: Dynamic, Object-Oriented Language
+        description: >-
+          Ruby is a dynamic, open-source programming language with a focus on
+          simplicity and productivity, with everything-is-an-object semantics.
+      - name: Standard Library HTTP Client
+        description: >-
+          Net::HTTP ships in the standard library and covers GET/POST/PUT/
+          DELETE/HEAD/PATCH/OPTIONS/TRACE plus WebDAV verbs and TLS.
+      - name: Public Package Registry API
+        description: >-
+          rubygems.org exposes versioned v1 and v2 REST APIs over HTTPS for
+          discovering, publishing, and managing gems with JSON or YAML
+          responses.
+      - name: Trusted Publishing via OIDC
+        description: >-
+          /api/v1/oidc/ endpoints let CI providers exchange OIDC tokens for
+          short-lived RubyGems API keys instead of long-lived secrets.
+      - name: Type Signatures with RBS
+        description: >-
+          RBS provides a separate-file type signature language so Ruby code
+          can carry an explicit, machine-checkable contract for IDEs and
+          type checkers.
+      - name: API-First Rails
+        description: >-
+          rails new --api generates a Rails app with a JSON-oriented
+          middleware stack and ActionController::API as the base class.
+  - type: UseCases
+    data:
+      - name: Consuming Third-Party HTTP APIs
+        description: >-
+          Calling external REST APIs from Ruby scripts, jobs, and services
+          using Net::HTTP, Faraday, http.rb, HTTParty, or Excon.
+      - name: Building JSON APIs
+        description: >-
+          Standing up REST/JSON APIs with Rails in --api mode, Sinatra,
+          or Grape, optionally documented with OpenAPI tooling.
+      - name: Publishing and Managing Gems
+        description: >-
+          Releasing libraries to rubygems.org via the v1 publish endpoints
+          and the gem and bundler CLIs, including trusted-publishing flows.
+      - name: Mirroring or Caching a Private Gem Server
+        description: >-
+          Running gemstash as a rubygems.org cache and private gem server
+          inside an enterprise.
+      - name: Static Analysis and IDE Support
+        description: >-
+          Writing .rbs signatures so type checkers and IDEs can validate
+          method shapes against the implementation.
+  - type: Integrations
+    data:
+      - name: rubygems.org Registry
+        description: >-
+          The default gem source for bundler and the gem CLI, accessible
+          over HTTPS at https://rubygems.org and https://rubygems.org/api/v1.
+      - name: GitHub Actions (setup-ruby)
+        description: >-
+          ruby/setup-ruby installs prebuilt Ruby versions in CI for
+          building, testing, and publishing gems.
+      - name: OIDC Trusted Publishing
+        description: >-
+          /api/v1/oidc/ exchanges short-lived CI OIDC tokens for scoped
+          rubygems.org API keys, eliminating long-lived secrets.
+      - name: Fastly CDN
+        description: >-
+          rubygems.org serves gem downloads and the API surface through
+          Fastly edge caching, tracked on status.rubygems.org.
+      - name: HackerOne Vulnerability Disclosure
+        description: >-
+          Ruby core security issues are reported through the official
+          HackerOne program and the security@ruby-lang.org mailing list.
+  - type: Solutions
+    data:
+      - name: Self-Hosted RubyGems with Gemstash
+        description: >-
+          A caching proxy and private gem server for organizations that
+          need air-gapped or controlled gem distribution.
+      - name: Rails-Powered API Backends
+        description: >-
+          Production JSON API backends built on Rails --api mode with
+          Active Record, Active Job, and Action Cable as needed.
+      - name: Sinatra Microservices
+        description: >-
+          Lightweight HTTP services and API gateways built on Sinatra's
+          minimal DSL.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

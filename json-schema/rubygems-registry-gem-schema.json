@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ruby/main/json-schema/rubygems-registry-gem-schema.json",
+  "title": "Gem",
+  "description": "A package published to rubygems.org.",
+  "type": "object",
+  "required": ["name", "version"],
+  "properties": {
+    "name": { "type": "string", "description": "Canonical gem name." },
+    "version": { "type": "string", "description": "Current latest version." },
+    "platform": { "type": "string", "description": "Target platform for this version (e.g. ruby, java)." },
+    "downloads": { "type": "integer", "minimum": 0, "description": "All-time download count for the gem." },
+    "version_downloads": { "type": "integer", "minimum": 0, "description": "Download count for the current version." },
+    "authors": { "type": "string" },
+    "info": { "type": "string", "description": "Short description / summary." },
+    "licenses": { "type": "array", "items": { "type": "string" } },
+    "metadata": { "type": "object", "additionalProperties": { "type": "string" } },
+    "yanked": { "type": "boolean" },
+    "sha": { "type": "string", "description": "SHA-256 checksum of the .gem file." },
+    "project_uri": { "type": "string", "format": "uri" },
+    "gem_uri": { "type": "string", "format": "uri" },
+    "homepage_uri": { "type": "string", "format": "uri" },
+    "documentation_uri": { "type": "string", "format": "uri" },
+    "source_code_uri": { "type": "string", "format": "uri" },
+    "bug_tracker_uri": { "type": "string", "format": "uri" },
+    "changelog_uri": { "type": "string", "format": "uri" },
+    "funding_uri": { "type": "string", "format": "uri" },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "development": { "type": "array", "items": { "$ref": "#/$defs/Dependency" } },
+        "runtime": { "type": "array", "items": { "$ref": "#/$defs/Dependency" } }
+      }
+    }
+  },
+  "$defs": {
+    "Dependency": {
+      "type": "object",
+      "required": ["name", "requirements"],
+      "properties": {
+        "name": { "type": "string" },
+        "requirements": { "type": "string", "description": "Version requirement string, e.g. >= 2.0, < 4." }
+      }
+    }
+  }
+}

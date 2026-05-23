@@ -1,0 +1,104 @@
+name: Ruby Programming Language Vocabulary
+description: >-
+  Controlled vocabulary covering Ruby the language, the rubygems.org
+  registry, packaging/dependency tooling, and the HTTP client and API
+  framework ecosystem.
+url: https://raw.githubusercontent.com/api-evangelist/ruby/main/vocabulary/ruby-vocabulary.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+
+categories:
+  - name: Language
+    terms:
+      - term: Ruby
+        definition: Dynamic, open-source, object-oriented programming language created by Yukihiro "Matz" Matsumoto.
+      - term: MRI / CRuby
+        definition: The reference C implementation of Ruby maintained in github.com/ruby/ruby.
+      - term: JRuby
+        definition: JVM-based Ruby implementation.
+      - term: TruffleRuby
+        definition: GraalVM-based Ruby implementation.
+      - term: Matz
+        definition: Yukihiro Matsumoto, creator and benevolent dictator of Ruby.
+
+  - name: Standard Library HTTP
+    terms:
+      - term: Net::HTTP
+        definition: Ruby standard library HTTP client class supporting GET/POST/PUT/DELETE/HEAD/PATCH/OPTIONS/TRACE plus WebDAV verbs.
+      - term: Net::HTTPRequest
+        definition: Base class for HTTP request objects passed to Net::HTTP.
+      - term: Net::HTTPResponse
+        definition: Wrapper around HTTP response status, headers, and body.
+      - term: URI
+        definition: Standard library module for parsing and constructing URIs; usually paired with Net::HTTP.
+
+  - name: HTTP Client Gems
+    terms:
+      - term: Faraday
+        definition: HTTP/REST API client with Rack-style middleware and pluggable adapters (Net::HTTP, Typhoeus, Patron, Excon, HTTPClient).
+      - term: HTTParty
+        definition: Class-level DSL that wraps Net::HTTP with parsers and authentication helpers; "makes consuming RESTful web services dead easy."
+      - term: http.rb
+        definition: Chainable HTTP client built on the llhttp parser with streaming and persistent connection support.
+      - term: Excon
+        definition: EXtended HTTP(S) CONnections; focused on performance and persistent connections.
+      - term: Typhoeus
+        definition: Libcurl-based HTTP client built for running HTTP requests in parallel.
+      - term: REST Client
+        definition: Sinatra-inspired simple HTTP and REST client.
+      - term: HTTPClient
+        definition: Long-standing Ruby HTTP client modeled on libwww-perl.
+
+  - name: API Frameworks
+    terms:
+      - term: Ruby on Rails
+        definition: Full-stack web framework; --api mode boots a JSON-API-oriented variant with ActionController::API.
+      - term: ActionController::API
+        definition: Slim Rails controller base class for JSON API applications.
+      - term: Sinatra
+        definition: DSL for quickly creating web applications and HTTP APIs in Ruby with minimal effort.
+      - term: Grape
+        definition: Opinionated framework for creating REST-like APIs in Ruby; mountable in Rails.
+      - term: Hanami
+        definition: Modular Ruby web framework that can be used for API-only applications.
+
+  - name: Packaging and Distribution
+    terms:
+      - term: Gem
+        definition: A versioned Ruby package distributed via rubygems.org.
+      - term: RubyGems
+        definition: The Ruby package manager and the registry hosting service at rubygems.org.
+      - term: Bundler
+        definition: Dependency manager that tracks gems and versions in a Gemfile and locks them in Gemfile.lock.
+      - term: Gemfile
+        definition: Manifest declaring an application's gem dependencies.
+      - term: Gemfile.lock
+        definition: Lockfile pinning the resolved versions of every dependency.
+      - term: Gemspec
+        definition: Metadata file describing a gem (name, version, files, dependencies) used when packaging it.
+      - term: Gemstash
+        definition: RubyGems.org cache and private gem server.
+      - term: Trusted Publishing
+        definition: Workflow that exchanges a CI OIDC token for a short-lived rubygems.org API key via /api/v1/oidc/.
+
+  - name: Registry API Resources
+    terms:
+      - term: Gem (resource)
+        definition: A package resource returned by /api/v1/gems/{name}.json containing version, downloads, URIs, and dependencies.
+      - term: Version
+        definition: A specific release of a gem returned by the versions endpoints.
+      - term: Owner
+        definition: A rubygems.org user with push rights on a gem.
+      - term: WebHook
+        definition: A user-registered callback URL fired when a gem (or any gem) is published.
+      - term: API Key
+        definition: Credential sent in the Authorization header to authenticate against the rubygems.org API.
+
+  - name: Type System
+    terms:
+      - term: RBS
+        definition: Type signature language for Ruby; .rbs files describe classes, methods, and inheritance separately from source.
+      - term: Steep
+        definition: Static type checker for Ruby that consumes RBS signatures.
+      - term: Sorbet
+        definition: Alternative gradual type checker for Ruby with inline annotations and .rbi files.

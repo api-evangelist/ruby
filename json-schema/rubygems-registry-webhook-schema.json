@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ruby/main/json-schema/rubygems-registry-webhook-schema.json",
+  "title": "WebHook",
+  "description": "A registered webhook on rubygems.org. Fires when a gem (or any gem if gem_name is \"*\") is published.",
+  "type": "object",
+  "required": ["url"],
+  "properties": {
+    "url": { "type": "string", "format": "uri" },
+    "failure_count": { "type": "integer", "minimum": 0 }
+  }
+}

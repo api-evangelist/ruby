@@ -1,0 +1,33 @@
+{
+  "name": "rails",
+  "downloads": 612458930,
+  "version": "8.1.3",
+  "version_created_at": "2026-03-24T16:12:08.000Z",
+  "version_downloads": 184227,
+  "platform": "ruby",
+  "authors": "David Heinemeier Hansson",
+  "info": "Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity.",
+  "licenses": ["MIT"],
+  "metadata": {
+    "homepage_uri": "https://rubyonrails.org",
+    "source_code_uri": "https://github.com/rails/rails/tree/v8.1.3"
+  },
+  "yanked": false,
+  "sha": "0a0a0a0a1b1b1b1b2c2c2c2c3d3d3d3d4e4e4e4e5f5f5f5f6a6a6a6a7b7b7b7b",
+  "project_uri": "https://rubygems.org/gems/rails",
+  "gem_uri": "https://rubygems.org/gems/rails-8.1.3.gem",
+  "homepage_uri": "https://rubyonrails.org",
+  "documentation_uri": "https://api.rubyonrails.org/v8.1.3/",
+  "source_code_uri": "https://github.com/rails/rails/tree/v8.1.3",
+  "bug_tracker_uri": "https://github.com/rails/rails/issues",
+  "changelog_uri": "https://github.com/rails/rails/releases/tag/v8.1.3",
+  "dependencies": {
+    "development": [],
+    "runtime": [
+      { "name": "activesupport", "requirements": "= 8.1.3" },
+      { "name": "activerecord",  "requirements": "= 8.1.3" },
+      { "name": "actionpack",    "requirements": "= 8.1.3" },
+      { "name": "railties",      "requirements": "= 8.1.3" }
+    ]
+  }
+}

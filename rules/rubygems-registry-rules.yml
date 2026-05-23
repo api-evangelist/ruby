@@ -1,0 +1,64 @@
+extends:
+  - spectral:oas
+documentationUrl: https://guides.rubygems.org/rubygems-org-api/
+rules:
+  rubygems-operation-summary-required:
+    description: Every operation must have a Title Case summary.
+    given: $.paths[*][get,post,put,delete,patch,head,options]
+    severity: error
+    then:
+      field: summary
+      function: truthy
+
+  rubygems-operation-summary-title-case:
+    description: Operation summaries must use Title Case (per API Evangelist convention).
+    given: $.paths[*][get,post,put,delete,patch,head,options].summary
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][A-Za-z0-9]*( [A-Z][A-Za-z0-9]*)*$"
+
+  rubygems-operation-id-required:
+    description: Every operation must declare an operationId for SDK generation.
+    given: $.paths[*][get,post,put,delete,patch,head,options]
+    severity: error
+    then:
+      field: operationId
+      function: truthy
+
+  rubygems-tags-required:
+    description: Every operation must have at least one tag for grouping.
+    given: $.paths[*][get,post,put,delete,patch,head,options]
+    severity: error
+    then:
+      field: tags
+      function: length
+      functionOptions:
+        min: 1
+
+  rubygems-json-only-success:
+    description: 2xx responses must offer application/json.
+    given: $.paths[*][get,post,put,delete,patch].responses['200','201'].content
+    severity: warn
+    then:
+      field: application/json
+      function: truthy
+
+  rubygems-versioned-path:
+    description: All RubyGems paths must be prefixed with /api/v1/ or /api/v2/.
+    given: $.paths
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/api/v[12]/"
+      field: "@key"
+
+  rubygems-api-key-security:
+    description: Mutating operations (POST, PUT, DELETE) must require ApiKeyAuth.
+    given: $.paths[*][post,put,delete]
+    severity: error
+    then:
+      field: security
+      function: truthy

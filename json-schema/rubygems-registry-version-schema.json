@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ruby/main/json-schema/rubygems-registry-version-schema.json",
+  "title": "Version",
+  "description": "A single published version of a gem on rubygems.org.",
+  "type": "object",
+  "required": ["number"],
+  "properties": {
+    "number": { "type": "string", "description": "Semantic version number, e.g. 7.1.3." },
+    "platform": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "downloads_count": { "type": "integer", "minimum": 0 },
+    "summary": { "type": "string" },
+    "description": { "type": "string" },
+    "authors": { "type": "string" },
+    "sha": { "type": "string", "description": "SHA-256 of the .gem file for this version." },
+    "prerelease": { "type": "boolean" },
+    "ruby_version": { "type": "string", "description": "Required Ruby version constraint." },
+    "rubygems_version": { "type": "string", "description": "Required RubyGems version constraint." },
+    "licenses": { "type": "array", "items": { "type": "string" } },
+    "requirements": { "type": "array", "items": { "type": "string" } }
+  }
+}

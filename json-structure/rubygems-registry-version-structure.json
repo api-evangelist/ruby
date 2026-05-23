@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/draft-00/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ruby/main/json-structure/rubygems-registry-version-structure.json",
+  "name": "Version",
+  "type": "object",
+  "description": "Structural definition of a rubygems.org Version entity.",
+  "properties": {
+    "number": { "type": "string" },
+    "platform": { "type": "string" },
+    "created_at": { "type": "datetime" },
+    "downloads_count": { "type": "int64" },
+    "summary": { "type": "string" },
+    "description": { "type": "string" },
+    "authors": { "type": "string" },
+    "sha": { "type": "string" },
+    "prerelease": { "type": "boolean" },
+    "ruby_version": { "type": "string" },
+    "rubygems_version": { "type": "string" },
+    "licenses": { "type": "array", "items": { "type": "string" } },
+    "requirements": { "type": "array", "items": { "type": "string" } }
+  }
+}

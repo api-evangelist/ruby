@@ -1,0 +1,123 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "RubyGems.org Registry API — Downloads"
+  description: >-
+    Downloads surface — Downloads. 2 operations. Lead operation: Get Downloads For A Gem Version.
+    Self-contained Naftiko capability covering one RubyGems business surface.
+  tags:
+    - RubyGems
+    - Registry
+    - Downloads
+  created: "2026-05-23"
+  modified: "2026-05-23"
+
+binds:
+  - namespace: env
+    keys:
+      RUBYGEMS_API_KEY: RUBYGEMS_API_KEY
+
+capability:
+
+  consumes:
+    - type: http
+      namespace: "rubygems-registry-downloads"
+      baseUri: "https://rubygems.org"
+      description: "RubyGems.org Registry — Downloads surface. Self-contained, no shared references."
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "{{env.RUBYGEMS_API_KEY}}"
+        placement: header
+      resources:
+        - name: "version-downloads"
+          path: "/api/v1/downloads/{gem_full_name}.json"
+          operations:
+            - name: "getVersionDownloads"
+              method: GET
+              description: "Get downloads for a gem version."
+              inputParameters:
+                - name: "gem_full_name"
+                  in: path
+                  type: string
+                  required: true
+                  description: "Gem name with version, e.g. rails-8.1.3."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: "total-downloads"
+          path: "/api/v1/downloads.json"
+          operations:
+            - name: "getTotalDownloads"
+              method: GET
+              description: "Get total RubyGems download count."
+              inputParameters: []
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      namespace: "rubygems-registry-downloads-rest"
+      port: 8080
+      description: "REST adapter for RubyGems.org Registry — Downloads."
+      resources:
+        - path: "/v1/downloads/{gem-full-name}"
+          name: "version-downloads"
+          description: "REST surface for downloads for a specific gem version."
+          operations:
+            - method: GET
+              name: "getVersionDownloads"
+              description: "Get downloads for a gem version."
+              call: "rubygems-registry-downloads.getVersionDownloads"
+              with:
+                gem_full_name: "rest.gem_full_name"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: "/v1/downloads"
+          name: "total-downloads"
+          description: "REST surface for total registry downloads."
+          operations:
+            - method: GET
+              name: "getTotalDownloads"
+              description: "Get total RubyGems download count."
+              call: "rubygems-registry-downloads.getTotalDownloads"
+              with: {}
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      namespace: "rubygems-registry-downloads-mcp"
+      port: 9090
+      transport: http
+      description: "MCP adapter for RubyGems.org Registry — Downloads."
+      tools:
+        - name: "get-version-downloads"
+          description: "Get downloads for a gem version."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "rubygems-registry-downloads.getVersionDownloads"
+          with:
+            gem_full_name: "tools.gem_full_name"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: "get-total-downloads"
+          description: "Get total RubyGems download count."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "rubygems-registry-downloads.getTotalDownloads"
+          with: {}
+          outputParameters:
+            - type: object
+              mapping: "$."

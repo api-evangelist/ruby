@@ -1,0 +1,81 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "RubyGems.org Registry API — Profiles"
+  description: >-
+    Profiles surface — Profiles. 1 operation. Lead operation: Get Authenticated User Profile.
+    Self-contained Naftiko capability covering one RubyGems business surface.
+  tags:
+    - RubyGems
+    - Registry
+    - Profiles
+  created: "2026-05-23"
+  modified: "2026-05-23"
+
+binds:
+  - namespace: env
+    keys:
+      RUBYGEMS_API_KEY: RUBYGEMS_API_KEY
+
+capability:
+
+  consumes:
+    - type: http
+      namespace: "rubygems-registry-profiles"
+      baseUri: "https://rubygems.org"
+      description: "RubyGems.org Registry — Profiles surface. Self-contained, no shared references."
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "{{env.RUBYGEMS_API_KEY}}"
+        placement: header
+      resources:
+        - name: "me"
+          path: "/api/v1/profiles/me.json"
+          operations:
+            - name: "getMyProfile"
+              method: GET
+              description: "Get authenticated user profile."
+              inputParameters: []
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      namespace: "rubygems-registry-profiles-rest"
+      port: 8080
+      description: "REST adapter for RubyGems.org Registry — Profiles."
+      resources:
+        - path: "/v1/profiles/me"
+          name: "me"
+          description: "REST surface for the authenticated user profile."
+          operations:
+            - method: GET
+              name: "getMyProfile"
+              description: "Get authenticated user profile."
+              call: "rubygems-registry-profiles.getMyProfile"
+              with: {}
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      namespace: "rubygems-registry-profiles-mcp"
+      port: 9090
+      transport: http
+      description: "MCP adapter for RubyGems.org Registry — Profiles."
+      tools:
+        - name: "get-my-profile"
+          description: "Get authenticated user profile."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "rubygems-registry-profiles.getMyProfile"
+          with: {}
+          outputParameters:
+            - type: object
+              mapping: "$."

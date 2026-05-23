@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://rubygems.org/api/v1/web_hooks",
+    "headers": {
+      "Authorization": "rubygems_api_key_redacted",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": "gem_name=rails&url=https%3A%2F%2Fexample.com%2Fhooks%2Frubygems"
+  },
+  "response": {
+    "status": 200,
+    "body": "Successfully created webhook for rails to https://example.com/hooks/rubygems"
+  }
+}

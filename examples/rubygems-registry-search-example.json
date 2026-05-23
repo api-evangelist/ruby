@@ -1,0 +1,26 @@
+[
+  {
+    "name": "faraday",
+    "downloads": 1183245601,
+    "version": "2.14.2",
+    "info": "HTTP/REST API client library.",
+    "licenses": ["MIT"],
+    "project_uri": "https://rubygems.org/gems/faraday"
+  },
+  {
+    "name": "faraday-net_http",
+    "downloads": 543012987,
+    "version": "3.5.0",
+    "info": "Faraday adapter for Net::HTTP.",
+    "licenses": ["MIT"],
+    "project_uri": "https://rubygems.org/gems/faraday-net_http"
+  },
+  {
+    "name": "faraday-retry",
+    "downloads": 412908551,
+    "version": "2.5.0",
+    "info": "Catches exceptions and retries each request a limited number of times.",
+    "licenses": ["MIT"],
+    "project_uri": "https://rubygems.org/gems/faraday-retry"
+  }
+]

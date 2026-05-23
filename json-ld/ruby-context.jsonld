@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "spdx": "http://spdx.org/rdf/terms#",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "ruby": "https://raw.githubusercontent.com/api-evangelist/ruby/main/json-ld/ruby-context.jsonld#",
+
+    "Gem": "ruby:Gem",
+    "Version": "ruby:Version",
+    "Owner": "ruby:Owner",
+    "WebHook": "ruby:WebHook",
+    "Dependency": "ruby:Dependency",
+
+    "name": "schema:name",
+    "version": "schema:softwareVersion",
+    "platform": "ruby:platform",
+    "downloads": { "@id": "ruby:downloads", "@type": "schema:Integer" },
+    "version_downloads": { "@id": "ruby:versionDownloads", "@type": "schema:Integer" },
+    "authors": "schema:author",
+    "info": "schema:description",
+    "licenses": { "@id": "schema:license", "@container": "@set" },
+    "yanked": { "@id": "ruby:yanked", "@type": "schema:Boolean" },
+    "sha": "ruby:sha",
+    "project_uri": { "@id": "schema:url", "@type": "@id" },
+    "gem_uri": { "@id": "ruby:downloadUrl", "@type": "@id" },
+    "homepage_uri": { "@id": "doap:homepage", "@type": "@id" },
+    "documentation_uri": { "@id": "schema:documentation", "@type": "@id" },
+    "source_code_uri": { "@id": "doap:repository", "@type": "@id" },
+    "bug_tracker_uri": { "@id": "doap:bug-database", "@type": "@id" },
+    "changelog_uri": { "@id": "ruby:changelog", "@type": "@id" },
+    "funding_uri": { "@id": "schema:funder", "@type": "@id" },
+    "dependencies": "ruby:dependencies",
+    "requirements": "ruby:requirements",
+
+    "number": "schema:softwareVersion",
+    "created_at": { "@id": "schema:dateCreated", "@type": "schema:DateTime" },
+    "downloads_count": { "@id": "ruby:downloadsCount", "@type": "schema:Integer" },
+    "summary": "schema:abstract",
+    "description": "schema:description",
+    "prerelease": { "@id": "ruby:prerelease", "@type": "schema:Boolean" },
+    "ruby_version": "ruby:requiredRubyVersion",
+    "rubygems_version": "ruby:requiredRubyGemsVersion",
+
+    "handle": "schema:alternateName",
+    "email": "schema:email",
+
+    "url": { "@id": "schema:url", "@type": "@id" },
+    "failure_count": { "@id": "ruby:failureCount", "@type": "schema:Integer" }
+  }
+}

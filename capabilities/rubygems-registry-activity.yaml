@@ -1,0 +1,116 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "RubyGems.org Registry API — Activity"
+  description: >-
+    Activity surface — Activity. 2 operations. Lead operation: Get Latest Gem Releases.
+    Self-contained Naftiko capability covering one RubyGems business surface.
+  tags:
+    - RubyGems
+    - Registry
+    - Activity
+  created: "2026-05-23"
+  modified: "2026-05-23"
+
+binds:
+  - namespace: env
+    keys:
+      RUBYGEMS_API_KEY: RUBYGEMS_API_KEY
+
+capability:
+
+  consumes:
+    - type: http
+      namespace: "rubygems-registry-activity"
+      baseUri: "https://rubygems.org"
+      description: "RubyGems.org Registry — Activity surface. Self-contained, no shared references."
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "{{env.RUBYGEMS_API_KEY}}"
+        placement: header
+      resources:
+        - name: "latest"
+          path: "/api/v1/activity/latest.json"
+          operations:
+            - name: "getLatestActivity"
+              method: GET
+              description: "Get latest gem releases."
+              inputParameters: []
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: "just-updated"
+          path: "/api/v1/activity/just_updated.json"
+          operations:
+            - name: "getJustUpdated"
+              method: GET
+              description: "Get just-updated gems."
+              inputParameters: []
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      namespace: "rubygems-registry-activity-rest"
+      port: 8080
+      description: "REST adapter for RubyGems.org Registry — Activity."
+      resources:
+        - path: "/v1/activity/latest"
+          name: "latest"
+          description: "REST surface for the latest releases feed."
+          operations:
+            - method: GET
+              name: "getLatestActivity"
+              description: "Get latest gem releases."
+              call: "rubygems-registry-activity.getLatestActivity"
+              with: {}
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: "/v1/activity/just-updated"
+          name: "just-updated"
+          description: "REST surface for the just-updated gems feed."
+          operations:
+            - method: GET
+              name: "getJustUpdated"
+              description: "Get just-updated gems."
+              call: "rubygems-registry-activity.getJustUpdated"
+              with: {}
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      namespace: "rubygems-registry-activity-mcp"
+      port: 9090
+      transport: http
+      description: "MCP adapter for RubyGems.org Registry — Activity."
+      tools:
+        - name: "get-latest-activity"
+          description: "Get latest gem releases."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "rubygems-registry-activity.getLatestActivity"
+          with: {}
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: "get-just-updated"
+          description: "Get just-updated gems."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "rubygems-registry-activity.getJustUpdated"
+          with: {}
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,566 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry API
+  description: >-
+    OpenAPI description of the public REST API for rubygems.org, the Ruby
+    community's gem hosting service. Covers the v1 surface documented at
+    https://guides.rubygems.org/rubygems-org-api/ and the v2 versions
+    endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: '1.0.0'
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+  - url: https://rubygems.org
+    description: Production registry
+tags:
+  - name: Gems
+  - name: Versions
+  - name: Downloads
+  - name: Owners
+  - name: Profiles
+  - name: Webhooks
+  - name: Activity
+  - name: API Keys
+  - name: OIDC
+security:
+  - ApiKeyAuth: []
+paths:
+  /api/v1/gems/{gem_name}.json:
+    get:
+      operationId: getGem
+      summary: Get Gem Info
+      description: Returns information about the named gem, including downloads, version, dependencies, and source URLs.
+      tags: [Gems]
+      parameters:
+        - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Gem details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gem'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /api/v1/gems.json:
+    get:
+      operationId: listOwnedGems
+      summary: List Gems Owned By Authenticated User
+      description: Returns all gems owned by the authenticated user.
+      tags: [Gems]
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Array of owned gems
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+    post:
+      operationId: pushGem
+      summary: Push Gem
+      description: Submits a built .gem file for publication. Body is the binary gem file.
+      tags: [Gems]
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: Gem accepted
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /api/v1/gems/yank:
+    delete:
+      operationId: yankVersion
+      summary: Yank A Version
+      description: Removes a specific gem version from the index so it can no longer be installed by default.
+      tags: [Gems]
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: gem_name
+          in: query
+          required: true
+          schema: { type: string }
+        - name: version
+          in: query
+          required: true
+          schema: { type: string }
+        - name: platform
+          in: query
+          required: false
+          schema: { type: string }
+      responses:
+        '200': { description: Yanked }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/v1/search.json:
+    get:
+      operationId: searchGems
+      summary: Search Gems
+      description: Searches gems by name or description and returns matching gem summaries.
+      tags: [Gems]
+      parameters:
+        - name: query
+          in: query
+          required: true
+          schema: { type: string }
+        - name: page
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, default: 1 }
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+  /api/v1/versions/{gem_name}.json:
+    get:
+      operationId: listVersions
+      summary: List All Versions Of A Gem
+      description: Returns every version of the named gem ordered most-recent first.
+      tags: [Versions]
+      parameters:
+        - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Versions list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Version'
+  /api/v1/versions/{gem_name}/latest.json:
+    get:
+      operationId: getLatestVersion
+      summary: Get Latest Version Of A Gem
+      description: Returns the latest stable version number for the named gem.
+      tags: [Versions]
+      parameters:
+        - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Latest version
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version: { type: string }
+  /api/v2/rubygems/{gem_name}/versions/{version}.json:
+    get:
+      operationId: getVersionDetails
+      summary: Get Gem Version Details
+      description: Returns full details for a specific gem version, optionally filtered by platform. This is the API v2 endpoint.
+      tags: [Versions]
+      parameters:
+        - $ref: '#/components/parameters/GemName'
+        - name: version
+          in: path
+          required: true
+          schema: { type: string }
+        - name: platform
+          in: query
+          required: false
+          schema: { type: string }
+      responses:
+        '200':
+          description: Version detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+  /api/v1/downloads/{gem_full_name}.json:
+    get:
+      operationId: getVersionDownloads
+      summary: Get Downloads For A Gem Version
+      description: Returns the total download count for a specific gem version (name plus version, e.g. "rails-7.1.3").
+      tags: [Downloads]
+      parameters:
+        - name: gem_full_name
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Download count
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DownloadCount'
+  /api/v1/downloads.json:
+    get:
+      operationId: getTotalDownloads
+      summary: Get Total Rubygems Download Count
+      description: Returns the total number of gem downloads ever counted across rubygems.org.
+      tags: [Downloads]
+      responses:
+        '200':
+          description: Total downloads
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TotalDownloads'
+  /api/v1/owners/{gem_name}.json:
+    get:
+      operationId: listOwners
+      summary: List Owners Of A Gem
+      description: Returns the owners (publishers) of the named gem.
+      tags: [Owners]
+      parameters:
+        - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Owner list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Owner'
+    post:
+      operationId: addOwner
+      summary: Add Owner To A Gem
+      description: Grants ownership of the gem to another rubygems.org user (by email).
+      tags: [Owners]
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - $ref: '#/components/parameters/GemName'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [email]
+              properties:
+                email: { type: string, format: email }
+      responses:
+        '200': { description: Owner added }
+    delete:
+      operationId: removeOwner
+      summary: Remove Owner From A Gem
+      description: Revokes ownership of the gem from the specified user.
+      tags: [Owners]
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - $ref: '#/components/parameters/GemName'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [email]
+              properties:
+                email: { type: string, format: email }
+      responses:
+        '200': { description: Owner removed }
+  /api/v1/profiles/me.json:
+    get:
+      operationId: getMyProfile
+      summary: Get Authenticated User Profile
+      description: Returns the profile of the authenticated user, including MFA level and handle.
+      tags: [Profiles]
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Profile detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+  /api/v1/web_hooks.json:
+    get:
+      operationId: listWebHooks
+      summary: List Web Hooks
+      description: Returns all webhooks registered for the authenticated user, grouped by gem.
+      tags: [Webhooks]
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Webhook map
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/WebHook'
+  /api/v1/web_hooks:
+    post:
+      operationId: createWebHook
+      summary: Register A Web Hook
+      description: Registers a callback URL fired when a gem (or any gem) is published. Use "*" as the gem name to receive global events.
+      tags: [Webhooks]
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [gem_name, url]
+              properties:
+                gem_name: { type: string }
+                url: { type: string, format: uri }
+      responses:
+        '200': { description: Webhook created }
+  /api/v1/web_hooks/remove:
+    delete:
+      operationId: removeWebHook
+      summary: Remove A Web Hook
+      description: Removes a previously registered webhook for the given gem and URL.
+      tags: [Webhooks]
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: gem_name
+          in: query
+          required: true
+          schema: { type: string }
+        - name: url
+          in: query
+          required: true
+          schema: { type: string, format: uri }
+      responses:
+        '200': { description: Webhook removed }
+  /api/v1/web_hooks/fire:
+    post:
+      operationId: fireWebHook
+      summary: Test Fire A Web Hook
+      description: Synchronously fires a registered webhook for testing purposes.
+      tags: [Webhooks]
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [gem_name, url]
+              properties:
+                gem_name: { type: string }
+                url: { type: string, format: uri }
+      responses:
+        '200': { description: Webhook fired }
+  /api/v1/activity/latest.json:
+    get:
+      operationId: getLatestActivity
+      summary: Get Latest Gem Releases
+      description: Returns the most recently published gem versions.
+      tags: [Activity]
+      responses:
+        '200':
+          description: Latest activity feed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+  /api/v1/activity/just_updated.json:
+    get:
+      operationId: getJustUpdated
+      summary: Get Just Updated Gems
+      description: Returns gems that received a new version most recently.
+      tags: [Activity]
+      responses:
+        '200':
+          description: Just-updated feed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+  /api/v1/api_key.json:
+    get:
+      operationId: getApiKey
+      summary: Get An API Key
+      description: Exchanges HTTP Basic credentials for the authenticated user's API key.
+      tags: [API Keys]
+      security:
+        - BasicAuth: []
+      responses:
+        '200':
+          description: API key
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rubygems_api_key: { type: string }
+  /api/v1/oidc/api_key_role/{token}/assume_role:
+    post:
+      operationId: assumeOidcRole
+      summary: Exchange OIDC Token For Trusted Publishing API Key
+      description: Exchanges a CI provider OIDC token (GitHub Actions, GitLab CI, etc.) for a short-lived RubyGems API key scoped by a configured trusted-publishing role.
+      tags: [OIDC]
+      parameters:
+        - name: token
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [jwt]
+              properties:
+                jwt: { type: string }
+      responses:
+        '200':
+          description: Scoped, short-lived API key
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rubygems_api_key: { type: string }
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic
+  parameters:
+    GemName:
+      name: gem_name
+      in: path
+      required: true
+      description: Canonical gem name.
+      schema: { type: string }
+  responses:
+    NotFound:
+      description: Gem or resource not found.
+    Unauthorized:
+      description: Missing or invalid API key.
+    Forbidden:
+      description: Caller is not authorized for this gem.
+  schemas:
+    Gem:
+      type: object
+      properties:
+        name: { type: string }
+        downloads: { type: integer }
+        version: { type: string }
+        version_created_at: { type: string, format: date-time }
+        version_downloads: { type: integer }
+        platform: { type: string }
+        authors: { type: string }
+        info: { type: string }
+        licenses:
+          type: array
+          items: { type: string }
+        metadata:
+          type: object
+          additionalProperties: { type: string }
+        yanked: { type: boolean }
+        sha: { type: string }
+        project_uri: { type: string, format: uri }
+        gem_uri: { type: string, format: uri }
+        homepage_uri: { type: string, format: uri }
+        wiki_uri: { type: string, format: uri }
+        documentation_uri: { type: string, format: uri }
+        mailing_list_uri: { type: string, format: uri }
+        source_code_uri: { type: string, format: uri }
+        bug_tracker_uri: { type: string, format: uri }
+        changelog_uri: { type: string, format: uri }
+        funding_uri: { type: string, format: uri }
+        dependencies:
+          type: object
+          properties:
+            development:
+              type: array
+              items: { $ref: '#/components/schemas/Dependency' }
+            runtime:
+              type: array
+              items: { $ref: '#/components/schemas/Dependency' }
+    Version:
+      type: object
+      properties:
+        number: { type: string }
+        platform: { type: string }
+        created_at: { type: string, format: date-time }
+        downloads_count: { type: integer }
+        summary: { type: string }
+        description: { type: string }
+        authors: { type: string }
+        sha: { type: string }
+        prerelease: { type: boolean }
+        ruby_version: { type: string }
+        rubygems_version: { type: string }
+        licenses:
+          type: array
+          items: { type: string }
+        requirements:
+          type: array
+          items: { type: string }
+    Dependency:
+      type: object
+      properties:
+        name: { type: string }
+        requirements: { type: string }
+    DownloadCount:
+      type: object
+      properties:
+        total_downloads: { type: integer }
+        version_downloads: { type: integer }
+    TotalDownloads:
+      type: object
+      properties:
+        total: { type: integer }
+    Owner:
+      type: object
+      properties:
+        id: { type: integer }
+        handle: { type: string }
+        email: { type: string, format: email }
+    Profile:
+      type: object
+      properties:
+        handle: { type: string }
+        email: { type: string, format: email }
+        mfa: { type: string, enum: [disabled, ui_only, ui_and_api, ui_and_gem_signin] }
+    WebHook:
+      type: object
+      properties:
+        url: { type: string, format: uri }
+        failure_count: { type: integer }
