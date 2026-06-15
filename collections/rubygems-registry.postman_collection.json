@@ -1,0 +1,2623 @@
+{
+  "item": [
+    {
+      "id": "a787caa1-e033-4c4f-a4a9-3cfe5ef0dad7",
+      "name": "Gems",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2a6549b2-2767-43e6-96c7-091ff1ec7795",
+          "name": "Get Gem Info",
+          "request": {
+            "name": "Get Gem Info",
+            "description": {
+              "content": "Returns information about the named gem, including downloads, version, dependencies, and source URLs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "gems",
+                "{{gem_name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54d06091-8890-4728-ad5d-7ef8b6476cd9",
+              "name": "Gem details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems",
+                    "{{gem_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"downloads\": 7756,\n  \"version\": \"string\",\n  \"version_created_at\": \"1981-08-15T21:50:50.780Z\",\n  \"version_downloads\": 6650,\n  \"platform\": \"string\",\n  \"authors\": \"string\",\n  \"info\": \"string\",\n  \"licenses\": [\n    \"string\",\n    \"string\"\n  ],\n  \"metadata\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"yanked\": false,\n  \"sha\": \"string\",\n  \"project_uri\": \"https://CVI.xuIGuql,oM0\",\n  \"gem_uri\": \"https://BgDkeZ.dkbVc.,z19LxXgtjhO.wwJuWY1FxSCE0dkAJ9UvxZXsQK-Kx57+aY5X38\",\n  \"homepage_uri\": \"https://RBQpcLAJkvEIFDUtNEBDwAzGOCkWXzuaN.evgrQdnrzUKdVHDwzMtaiO+jPCZKZWPuFf.\",\n  \"wiki_uri\": \"https://sjeuQK.tnuBouVGC.1XFRLxtAs9TR\",\n  \"documentation_uri\": \"https://uqX.frHoIQ6SpDScpNHmPUCctm6T-IbHTXyvFOrtBXCJj\",\n  \"mailing_list_uri\": \"https://CeymKvVNZGuZBPpAYICyCqwmrNKpVhUa.dyKUelEHthMrE4t,sxkgw7GJWuyS5.l4vrWvH\",\n  \"source_code_uri\": \"http://GMWDfXnmTpWzsrvqUDJNMAtBI.maCcEUzr7R6CrejQyOLAn12F\",\n  \"bug_tracker_uri\": \"https://qeDykqExwOfZlpI.yupX,TeVhg7u7bgmW4tlwMfTUBBEZqKpuT5-WoLJ6qK85DWWUtHHe+L6\",\n  \"changelog_uri\": \"https://WKikUNXjpkbHy.mqyxgIq3vd8moLSZGIiZaLCS4kUMpS7scaOj6GmBqk\",\n  \"funding_uri\": \"http://ZtCbBqyhkiqfXooLYkHlzjBsAonZzlEv.wxjrwv1Saq5GP7ssDRPIC\",\n  \"dependencies\": {\n    \"development\": [\n      {\n        \"name\": \"string\",\n        \"requirements\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"requirements\": \"string\"\n      }\n    ],\n    \"runtime\": [\n      {\n        \"name\": \"string\",\n        \"requirements\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"requirements\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb11d0eb-d47c-4510-8362-89ec7453bffa",
+              "name": "Gem or resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems",
+                    "{{gem_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "26ea9bfd-b05c-4481-afc2-1cd09a5f3f40",
+          "name": "List Gems Owned By Authenticated User",
+          "request": {
+            "name": "List Gems Owned By Authenticated User",
+            "description": {
+              "content": "Returns all gems owned by the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "gems.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7cebae8b-02ca-4bc1-b358-d6a585a7cf3e",
+              "name": "Array of owned gems",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"downloads\": 7443,\n    \"version\": \"string\",\n    \"version_created_at\": \"1959-08-06T09:28:38.010Z\",\n    \"version_downloads\": 3986,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": true,\n    \"sha\": \"string\",\n    \"project_uri\": \"http://sikgxXIKJKVRl.mhwMxpebU8DAUnl7Fhr8vO\",\n    \"gem_uri\": \"http://fbSxNFw.ntmmipZiWSL\",\n    \"homepage_uri\": \"https://LYcBUYEscSGYX.erkoXm1S60EXpyk7hheOn\",\n    \"wiki_uri\": \"http://OLSAESO.afgFJPAjXzjc2eZcWA34HcBGTnzLsXfjXfXQdu53KAtcXJwzWbz\",\n    \"documentation_uri\": \"https://LK.mpC3mOdt24oMeaCPIHJBtJ6pKrMzTTWGh.BW6\",\n    \"mailing_list_uri\": \"https://IdgpZBLBh.uxw+hPpl69jM8DWHpcaGQq-CuSt5pTImJ4gb3.UrVY.7mXwYzdYJeLe6hLBB\",\n    \"source_code_uri\": \"http://WYHTagRnkfoc.bckjg+8ObC5N6DAHlwN8aDzZyUNkZmiIYmdf7gJixg\",\n    \"bug_tracker_uri\": \"http://pyXKVLLMwydOgHJulbxiELObvpEOZ.eglit6s2TWT8NkG7r+Vm\",\n    \"changelog_uri\": \"http://MT.xvvcvscFaALO7FkUHqwM2CZciY2aENr,N0nS7obDCjywrfqGYK8aJUdUZHp0xqHcVn\",\n    \"funding_uri\": \"https://YpNvtqAKypgeLeYpDflcqWgzOoPQFcMhT.jptpdin1.t3VLccZZzNOobezY-m.KK2CWKH8aMxnnubbqlL7aqZ6h+AYUA9l1Xsyf6zd\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"name\": \"string\",\n    \"downloads\": 8445,\n    \"version\": \"string\",\n    \"version_created_at\": \"1962-11-19T01:57:24.915Z\",\n    \"version_downloads\": 2462,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"https://lpQvhbTCtKSS.yxS.wduRkD0LymXLjfWlz8lpJrh,4Hl\",\n    \"gem_uri\": \"http://zdSvGnKOJnyZNslmvl.nxzb6ibKsXKD5W,rKkdP71KBZXZVDXe6BHTqyEvV\",\n    \"homepage_uri\": \"https://IAdwLhm.hkkqsK.c5BWs1UXUo\",\n    \"wiki_uri\": \"https://yiFBePYTJmKdzusZZXcYEThgFcQ.bysvyq3,5eVyl1TeH4\",\n    \"documentation_uri\": \"http://BhHYaWvuUpaqPeCJ.flq68jasjUs1COtiY4BU6-tCbowmEE9AgnW3wppPQlG3ZNBBmBnSCnMhkd\",\n    \"mailing_list_uri\": \"https://boTLNUOYsGyzgB.vciUVtvH4EzjU\",\n    \"source_code_uri\": \"https://ypmQiDiUQligqhxZKajD.oqA8WkzA5.5XeXkCzpE-Y8NkTJebou\",\n    \"bug_tracker_uri\": \"http://vxWXSC.ndiy7if9ZmV.n2ePOBurvrb.Xnu5kpQeEpDYMDk8h09N4prF36z6hLTN2hYX9HhBRd,d2\",\n    \"changelog_uri\": \"http://SCCwq.ovohi9n4uNce4u8GumL6TWQo\",\n    \"funding_uri\": \"http://vAeljtPbWPw.jewLsWSmYJ11HPqlSWH-31m7eWOi6NR\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f0d612af-7caf-4027-9006-bb8e566e9c59",
+          "name": "Push Gem",
+          "request": {
+            "name": "Push Gem",
+            "description": {
+              "content": "Submits a built .gem file for publication. Body is the binary gem file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "gems.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/octet-stream"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<binary>"
+            }
+          },
+          "response": [
+            {
+              "id": "d2778b2f-a013-436b-bd88-70e2ccae090c",
+              "name": "Gem accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "65e4f350-c195-4443-9d3c-3638f1e34877",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c16dc596-48a1-40e8-b8f4-72b7c0af77c6",
+              "name": "Caller is not authorized for this gem.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a60790f5-30b8-4e3f-b999-2b64dd087fc2",
+          "name": "Yank A Version",
+          "request": {
+            "name": "Yank A Version",
+            "description": {
+              "content": "Removes a specific gem version from the index so it can no longer be installed by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "gems",
+                "yank"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gem_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "platform",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dc08e95a-2043-4190-8b38-b9f81e699ca8",
+              "name": "Yanked",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems",
+                    "yank"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gem_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e78f7aea-5100-4aff-b167-2e09912aeb0a",
+              "name": "Gem or resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "gems",
+                    "yank"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gem_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca49903f-aa25-4712-b5e5-0038e2f3040f",
+          "name": "Search Gems",
+          "request": {
+            "name": "Search Gems",
+            "description": {
+              "content": "Searches gems by name or description and returns matching gem summaries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "search.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f61d84c-a7a9-4a6e-b2f8-0043c0c7f30b",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "search.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"downloads\": 7443,\n    \"version\": \"string\",\n    \"version_created_at\": \"1959-08-06T09:28:38.010Z\",\n    \"version_downloads\": 3986,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": true,\n    \"sha\": \"string\",\n    \"project_uri\": \"http://sikgxXIKJKVRl.mhwMxpebU8DAUnl7Fhr8vO\",\n    \"gem_uri\": \"http://fbSxNFw.ntmmipZiWSL\",\n    \"homepage_uri\": \"https://LYcBUYEscSGYX.erkoXm1S60EXpyk7hheOn\",\n    \"wiki_uri\": \"http://OLSAESO.afgFJPAjXzjc2eZcWA34HcBGTnzLsXfjXfXQdu53KAtcXJwzWbz\",\n    \"documentation_uri\": \"https://LK.mpC3mOdt24oMeaCPIHJBtJ6pKrMzTTWGh.BW6\",\n    \"mailing_list_uri\": \"https://IdgpZBLBh.uxw+hPpl69jM8DWHpcaGQq-CuSt5pTImJ4gb3.UrVY.7mXwYzdYJeLe6hLBB\",\n    \"source_code_uri\": \"http://WYHTagRnkfoc.bckjg+8ObC5N6DAHlwN8aDzZyUNkZmiIYmdf7gJixg\",\n    \"bug_tracker_uri\": \"http://pyXKVLLMwydOgHJulbxiELObvpEOZ.eglit6s2TWT8NkG7r+Vm\",\n    \"changelog_uri\": \"http://MT.xvvcvscFaALO7FkUHqwM2CZciY2aENr,N0nS7obDCjywrfqGYK8aJUdUZHp0xqHcVn\",\n    \"funding_uri\": \"https://YpNvtqAKypgeLeYpDflcqWgzOoPQFcMhT.jptpdin1.t3VLccZZzNOobezY-m.KK2CWKH8aMxnnubbqlL7aqZ6h+AYUA9l1Xsyf6zd\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"name\": \"string\",\n    \"downloads\": 8445,\n    \"version\": \"string\",\n    \"version_created_at\": \"1962-11-19T01:57:24.915Z\",\n    \"version_downloads\": 2462,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"https://lpQvhbTCtKSS.yxS.wduRkD0LymXLjfWlz8lpJrh,4Hl\",\n    \"gem_uri\": \"http://zdSvGnKOJnyZNslmvl.nxzb6ibKsXKD5W,rKkdP71KBZXZVDXe6BHTqyEvV\",\n    \"homepage_uri\": \"https://IAdwLhm.hkkqsK.c5BWs1UXUo\",\n    \"wiki_uri\": \"https://yiFBePYTJmKdzusZZXcYEThgFcQ.bysvyq3,5eVyl1TeH4\",\n    \"documentation_uri\": \"http://BhHYaWvuUpaqPeCJ.flq68jasjUs1COtiY4BU6-tCbowmEE9AgnW3wppPQlG3ZNBBmBnSCnMhkd\",\n    \"mailing_list_uri\": \"https://boTLNUOYsGyzgB.vciUVtvH4EzjU\",\n    \"source_code_uri\": \"https://ypmQiDiUQligqhxZKajD.oqA8WkzA5.5XeXkCzpE-Y8NkTJebou\",\n    \"bug_tracker_uri\": \"http://vxWXSC.ndiy7if9ZmV.n2ePOBurvrb.Xnu5kpQeEpDYMDk8h09N4prF36z6hLTN2hYX9HhBRd,d2\",\n    \"changelog_uri\": \"http://SCCwq.ovohi9n4uNce4u8GumL6TWQo\",\n    \"funding_uri\": \"http://vAeljtPbWPw.jewLsWSmYJ11HPqlSWH-31m7eWOi6NR\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a6ba333a-7356-409b-8efb-776df7653ebd",
+      "name": "Versions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "586b74e3-d549-4978-b671-0ce9180e865a",
+          "name": "List All Versions Of A Gem",
+          "request": {
+            "name": "List All Versions Of A Gem",
+            "description": {
+              "content": "Returns every version of the named gem ordered most-recent first.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "versions",
+                "{{gem_name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c0eeefb-f56d-4ead-8f68-cd591f8de9b3",
+              "name": "Versions list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "versions",
+                    "{{gem_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"number\": \"string\",\n    \"platform\": \"string\",\n    \"created_at\": \"1982-02-15T19:01:18.553Z\",\n    \"downloads_count\": 670,\n    \"summary\": \"string\",\n    \"description\": \"string\",\n    \"authors\": \"string\",\n    \"sha\": \"string\",\n    \"prerelease\": false,\n    \"ruby_version\": \"string\",\n    \"rubygems_version\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"requirements\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"number\": \"string\",\n    \"platform\": \"string\",\n    \"created_at\": \"1956-10-13T23:35:21.423Z\",\n    \"downloads_count\": 4140,\n    \"summary\": \"string\",\n    \"description\": \"string\",\n    \"authors\": \"string\",\n    \"sha\": \"string\",\n    \"prerelease\": false,\n    \"ruby_version\": \"string\",\n    \"rubygems_version\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"requirements\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49e9acb1-2234-432d-88ab-3f36636e3913",
+          "name": "Get Latest Version Of A Gem",
+          "request": {
+            "name": "Get Latest Version Of A Gem",
+            "description": {
+              "content": "Returns the latest stable version number for the named gem.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "versions",
+                ":gem_name",
+                "latest.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gem_name",
+                  "description": "(Required) Canonical gem name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0c1b811-5e2c-4cdb-b29a-eed3cc17de0e",
+              "name": "Latest version",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "versions",
+                    ":gem_name",
+                    "latest.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gem_name",
+                      "description": "(Required) Canonical gem name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "305c57ce-85e0-4c64-9f86-c8a2202ca29c",
+          "name": "Get Gem Version Details",
+          "request": {
+            "name": "Get Gem Version Details",
+            "description": {
+              "content": "Returns full details for a specific gem version, optionally filtered by platform. This is the API v2 endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "rubygems",
+                ":gem_name",
+                "versions",
+                "{{version}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "platform",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gem_name",
+                  "description": "(Required) Canonical gem name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a6573e56-f735-4f36-b2d8-6c549037470f",
+              "name": "Version detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "rubygems",
+                    ":gem_name",
+                    "versions",
+                    "{{version}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gem_name",
+                      "description": "(Required) Canonical gem name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"number\": \"string\",\n  \"platform\": \"string\",\n  \"created_at\": \"1963-06-14T23:48:18.601Z\",\n  \"downloads_count\": 5773,\n  \"summary\": \"string\",\n  \"description\": \"string\",\n  \"authors\": \"string\",\n  \"sha\": \"string\",\n  \"prerelease\": true,\n  \"ruby_version\": \"string\",\n  \"rubygems_version\": \"string\",\n  \"licenses\": [\n    \"string\",\n    \"string\"\n  ],\n  \"requirements\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bbdd4f71-79c0-4db2-8732-0c5b1bfce97a",
+      "name": "Downloads",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "25c6ff23-facd-49c6-8b9f-ebe3b19a10f7",
+          "name": "Get Downloads For A Gem Version",
+          "request": {
+            "name": "Get Downloads For A Gem Version",
+            "description": {
+              "content": "Returns the total download count for a specific gem version (name plus version, e.g. \"rails-7.1.3\").",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "downloads",
+                "{{gem_full_name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26edb321-4cc0-4a65-8603-c3a8f0909745",
+              "name": "Download count",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "downloads",
+                    "{{gem_full_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_downloads\": 2738,\n  \"version_downloads\": 8143\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a86d7c3-d815-41d1-ac1f-96e10da96cc9",
+          "name": "Get Total Rubygems Download Count",
+          "request": {
+            "name": "Get Total Rubygems Download Count",
+            "description": {
+              "content": "Returns the total number of gem downloads ever counted across rubygems.org.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "downloads.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e19bedc-335b-436e-a629-0a998c77ca50",
+              "name": "Total downloads",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "downloads.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 9434\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d0b474d3-4e77-4ab2-8cbd-1cc58754aa03",
+      "name": "Owners",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3cf154ac-e073-4d43-964e-8cb96a53693f",
+          "name": "List Owners Of A Gem",
+          "request": {
+            "name": "List Owners Of A Gem",
+            "description": {
+              "content": "Returns the owners (publishers) of the named gem.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "owners",
+                "{{gem_name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "974dbf02-ebff-409e-914c-73602ced3ef2",
+              "name": "Owner list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "owners",
+                    "{{gem_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1390,\n    \"handle\": \"string\",\n    \"email\": \"5xyz@LArsYJoVKxXqLEo.uh\"\n  },\n  {\n    \"id\": 8731,\n    \"handle\": \"string\",\n    \"email\": \"S7rF4Eul@imAg.uxaw\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ae8a3d9-2709-4be4-beb1-aac66752ba74",
+          "name": "Add Owner To A Gem",
+          "request": {
+            "name": "Add Owner To A Gem",
+            "description": {
+              "content": "Grants ownership of the gem to another rubygems.org user (by email).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "owners",
+                "{{gem_name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<email>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "37606abc-178e-4844-8655-9be7f625662b",
+              "name": "Owner added",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "owners",
+                    "{{gem_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "<email>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f418bd0-181e-44d9-94db-3f28ddb678c6",
+          "name": "Remove Owner From A Gem",
+          "request": {
+            "name": "Remove Owner From A Gem",
+            "description": {
+              "content": "Revokes ownership of the gem from the specified user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "owners",
+                "{{gem_name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<email>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "06ea0368-0bc6-4498-a4ef-4cc04470c493",
+              "name": "Owner removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "owners",
+                    "{{gem_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "<email>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "104677b2-a11d-41d7-83be-82884d2f934a",
+      "name": "Profiles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3e8b2944-98ea-46b4-a62d-b8d4b34ac16e",
+          "name": "Get Authenticated User Profile",
+          "request": {
+            "name": "Get Authenticated User Profile",
+            "description": {
+              "content": "Returns the profile of the authenticated user, including MFA level and handle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "profiles",
+                "me.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c633cdd3-905b-4d05-bc09-61d96b296fda",
+              "name": "Profile detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles",
+                    "me.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"handle\": \"string\",\n  \"email\": \"BdlvoX@yfMUKLcjJ.jb\",\n  \"mfa\": \"ui_and_gem_signin\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "411acc65-610e-4a0c-892d-9a4c2eca6b92",
+      "name": "Webhooks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1e19305d-2bc6-42fc-89af-cf748643da6f",
+          "name": "List Web Hooks",
+          "request": {
+            "name": "List Web Hooks",
+            "description": {
+              "content": "Returns all webhooks registered for the authenticated user, grouped by gem.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "web_hooks.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fa18d793-52a3-45a3-88f3-dacc3f4b2d16",
+              "name": "Webhook map",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "web_hooks.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": [\n    {\n      \"url\": \"http://CTx.lsVj,B0I3vbw9MAjBz0-uUaj,JKofWCs.SPUKWhascZyV7nuucOqQJRv4OgGwT+XS71XjIC4YVzuLZB\",\n      \"failure_count\": 9297\n    },\n    {\n      \"url\": \"http://slVoNiXOZageHDYhiWMx.ltvizI9WtuPcX3Ee4X4ig2MRhy3kC+X-DWFRlF\",\n      \"failure_count\": 1273\n    }\n  ],\n  \"key_1\": [\n    {\n      \"url\": \"http://SADkYDEDwWYwpNuzOqwUITbEGsU.zvzLIbDe-XejwCLJTQC2WyY4XJ.QiQo\",\n      \"failure_count\": 3890\n    },\n    {\n      \"url\": \"https://zXthFVfkjrgNfBgv.muvX4Y+8V4jL\",\n      \"failure_count\": 2709\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "daaccbaf-d3ec-4ca9-902f-83fef46b8be4",
+          "name": "Register A Web Hook",
+          "request": {
+            "name": "Register A Web Hook",
+            "description": {
+              "content": "Registers a callback URL fired when a gem (or any gem) is published. Use \"*\" as the gem name to receive global events.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "web_hooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "gem_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "588c200a-5d8a-4ac1-97a9-e0e7f9020d45",
+              "name": "Webhook created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "web_hooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "gem_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "110a8afa-d36e-4e67-8e98-640b648c2b59",
+          "name": "Remove A Web Hook",
+          "request": {
+            "name": "Remove A Web Hook",
+            "description": {
+              "content": "Removes a previously registered webhook for the given gem and URL.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "web_hooks",
+                "remove"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gem_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7eb7af8f-2681-48be-b243-ea8d42664438",
+              "name": "Webhook removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "web_hooks",
+                    "remove"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gem_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de4f11a4-4996-4093-ba86-b3709d101d55",
+          "name": "Test Fire A Web Hook",
+          "request": {
+            "name": "Test Fire A Web Hook",
+            "description": {
+              "content": "Synchronously fires a registered webhook for testing purposes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "web_hooks",
+                "fire"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "gem_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "385db395-8dcb-407a-921c-e900e96d5ec1",
+              "name": "Webhook fired",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "web_hooks",
+                    "fire"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "gem_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6b03e085-547d-4bb6-9339-3183139f6f74",
+      "name": "Activity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c92897e5-9c11-4d81-8bdc-848eeefffc71",
+          "name": "Get Latest Gem Releases",
+          "request": {
+            "name": "Get Latest Gem Releases",
+            "description": {
+              "content": "Returns the most recently published gem versions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "activity",
+                "latest.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b5ee2bd-0e1a-4fdb-b9c3-f05d36a3fb16",
+              "name": "Latest activity feed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "activity",
+                    "latest.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"downloads\": 7443,\n    \"version\": \"string\",\n    \"version_created_at\": \"1959-08-06T09:28:38.010Z\",\n    \"version_downloads\": 3986,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": true,\n    \"sha\": \"string\",\n    \"project_uri\": \"http://sikgxXIKJKVRl.mhwMxpebU8DAUnl7Fhr8vO\",\n    \"gem_uri\": \"http://fbSxNFw.ntmmipZiWSL\",\n    \"homepage_uri\": \"https://LYcBUYEscSGYX.erkoXm1S60EXpyk7hheOn\",\n    \"wiki_uri\": \"http://OLSAESO.afgFJPAjXzjc2eZcWA34HcBGTnzLsXfjXfXQdu53KAtcXJwzWbz\",\n    \"documentation_uri\": \"https://LK.mpC3mOdt24oMeaCPIHJBtJ6pKrMzTTWGh.BW6\",\n    \"mailing_list_uri\": \"https://IdgpZBLBh.uxw+hPpl69jM8DWHpcaGQq-CuSt5pTImJ4gb3.UrVY.7mXwYzdYJeLe6hLBB\",\n    \"source_code_uri\": \"http://WYHTagRnkfoc.bckjg+8ObC5N6DAHlwN8aDzZyUNkZmiIYmdf7gJixg\",\n    \"bug_tracker_uri\": \"http://pyXKVLLMwydOgHJulbxiELObvpEOZ.eglit6s2TWT8NkG7r+Vm\",\n    \"changelog_uri\": \"http://MT.xvvcvscFaALO7FkUHqwM2CZciY2aENr,N0nS7obDCjywrfqGYK8aJUdUZHp0xqHcVn\",\n    \"funding_uri\": \"https://YpNvtqAKypgeLeYpDflcqWgzOoPQFcMhT.jptpdin1.t3VLccZZzNOobezY-m.KK2CWKH8aMxnnubbqlL7aqZ6h+AYUA9l1Xsyf6zd\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"name\": \"string\",\n    \"downloads\": 8445,\n    \"version\": \"string\",\n    \"version_created_at\": \"1962-11-19T01:57:24.915Z\",\n    \"version_downloads\": 2462,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"https://lpQvhbTCtKSS.yxS.wduRkD0LymXLjfWlz8lpJrh,4Hl\",\n    \"gem_uri\": \"http://zdSvGnKOJnyZNslmvl.nxzb6ibKsXKD5W,rKkdP71KBZXZVDXe6BHTqyEvV\",\n    \"homepage_uri\": \"https://IAdwLhm.hkkqsK.c5BWs1UXUo\",\n    \"wiki_uri\": \"https://yiFBePYTJmKdzusZZXcYEThgFcQ.bysvyq3,5eVyl1TeH4\",\n    \"documentation_uri\": \"http://BhHYaWvuUpaqPeCJ.flq68jasjUs1COtiY4BU6-tCbowmEE9AgnW3wppPQlG3ZNBBmBnSCnMhkd\",\n    \"mailing_list_uri\": \"https://boTLNUOYsGyzgB.vciUVtvH4EzjU\",\n    \"source_code_uri\": \"https://ypmQiDiUQligqhxZKajD.oqA8WkzA5.5XeXkCzpE-Y8NkTJebou\",\n    \"bug_tracker_uri\": \"http://vxWXSC.ndiy7if9ZmV.n2ePOBurvrb.Xnu5kpQeEpDYMDk8h09N4prF36z6hLTN2hYX9HhBRd,d2\",\n    \"changelog_uri\": \"http://SCCwq.ovohi9n4uNce4u8GumL6TWQo\",\n    \"funding_uri\": \"http://vAeljtPbWPw.jewLsWSmYJ11HPqlSWH-31m7eWOi6NR\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f86cde1a-23ea-47ee-9ae0-730482ae0599",
+          "name": "Get Just Updated Gems",
+          "request": {
+            "name": "Get Just Updated Gems",
+            "description": {
+              "content": "Returns gems that received a new version most recently.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "activity",
+                "just_updated.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77d87ccb-1d61-4788-a9cc-ded3407badab",
+              "name": "Just-updated feed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "activity",
+                    "just_updated.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"downloads\": 7443,\n    \"version\": \"string\",\n    \"version_created_at\": \"1959-08-06T09:28:38.010Z\",\n    \"version_downloads\": 3986,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": true,\n    \"sha\": \"string\",\n    \"project_uri\": \"http://sikgxXIKJKVRl.mhwMxpebU8DAUnl7Fhr8vO\",\n    \"gem_uri\": \"http://fbSxNFw.ntmmipZiWSL\",\n    \"homepage_uri\": \"https://LYcBUYEscSGYX.erkoXm1S60EXpyk7hheOn\",\n    \"wiki_uri\": \"http://OLSAESO.afgFJPAjXzjc2eZcWA34HcBGTnzLsXfjXfXQdu53KAtcXJwzWbz\",\n    \"documentation_uri\": \"https://LK.mpC3mOdt24oMeaCPIHJBtJ6pKrMzTTWGh.BW6\",\n    \"mailing_list_uri\": \"https://IdgpZBLBh.uxw+hPpl69jM8DWHpcaGQq-CuSt5pTImJ4gb3.UrVY.7mXwYzdYJeLe6hLBB\",\n    \"source_code_uri\": \"http://WYHTagRnkfoc.bckjg+8ObC5N6DAHlwN8aDzZyUNkZmiIYmdf7gJixg\",\n    \"bug_tracker_uri\": \"http://pyXKVLLMwydOgHJulbxiELObvpEOZ.eglit6s2TWT8NkG7r+Vm\",\n    \"changelog_uri\": \"http://MT.xvvcvscFaALO7FkUHqwM2CZciY2aENr,N0nS7obDCjywrfqGYK8aJUdUZHp0xqHcVn\",\n    \"funding_uri\": \"https://YpNvtqAKypgeLeYpDflcqWgzOoPQFcMhT.jptpdin1.t3VLccZZzNOobezY-m.KK2CWKH8aMxnnubbqlL7aqZ6h+AYUA9l1Xsyf6zd\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"name\": \"string\",\n    \"downloads\": 8445,\n    \"version\": \"string\",\n    \"version_created_at\": \"1962-11-19T01:57:24.915Z\",\n    \"version_downloads\": 2462,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"https://lpQvhbTCtKSS.yxS.wduRkD0LymXLjfWlz8lpJrh,4Hl\",\n    \"gem_uri\": \"http://zdSvGnKOJnyZNslmvl.nxzb6ibKsXKD5W,rKkdP71KBZXZVDXe6BHTqyEvV\",\n    \"homepage_uri\": \"https://IAdwLhm.hkkqsK.c5BWs1UXUo\",\n    \"wiki_uri\": \"https://yiFBePYTJmKdzusZZXcYEThgFcQ.bysvyq3,5eVyl1TeH4\",\n    \"documentation_uri\": \"http://BhHYaWvuUpaqPeCJ.flq68jasjUs1COtiY4BU6-tCbowmEE9AgnW3wppPQlG3ZNBBmBnSCnMhkd\",\n    \"mailing_list_uri\": \"https://boTLNUOYsGyzgB.vciUVtvH4EzjU\",\n    \"source_code_uri\": \"https://ypmQiDiUQligqhxZKajD.oqA8WkzA5.5XeXkCzpE-Y8NkTJebou\",\n    \"bug_tracker_uri\": \"http://vxWXSC.ndiy7if9ZmV.n2ePOBurvrb.Xnu5kpQeEpDYMDk8h09N4prF36z6hLTN2hYX9HhBRd,d2\",\n    \"changelog_uri\": \"http://SCCwq.ovohi9n4uNce4u8GumL6TWQo\",\n    \"funding_uri\": \"http://vAeljtPbWPw.jewLsWSmYJ11HPqlSWH-31m7eWOi6NR\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2e932bea-8c87-4070-b089-e94b3f768c95",
+      "name": "API Keys",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d5cb7281-e6ff-4568-b8dd-dc565eb99d49",
+          "name": "Get An API Key",
+          "request": {
+            "name": "Get An API Key",
+            "description": {
+              "content": "Exchanges HTTP Basic credentials for the authenticated user's API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "api_key.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3e71749c-ca74-4336-85bd-30bb20e3e50e",
+              "name": "API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "api_key.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rubygems_api_key\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "743d846e-f4a6-4441-9d00-a876d0a906d4",
+      "name": "OIDC",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8e627a79-7492-4a2e-86d5-d146438a5a0a",
+          "name": "Exchange OIDC Token For Trusted Publishing API Key",
+          "request": {
+            "name": "Exchange OIDC Token For Trusted Publishing API Key",
+            "description": {
+              "content": "Exchanges a CI provider OIDC token (GitHub Actions, GitLab CI, etc.) for a short-lived RubyGems API key scoped by a configured trusted-publishing role.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "oidc",
+                "api_key_role",
+                ":token",
+                "assume_role"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jwt\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fc257c30-8ff0-420c-b4b4-9f2a4d12316c",
+              "name": "Scoped, short-lived API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "oidc",
+                    "api_key_role",
+                    ":token",
+                    "assume_role"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jwt\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rubygems_api_key\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rubygems.org",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Canonical gem name.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "gem_name"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "gem_full_name"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "version"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "75fde28c-5dce-431f-b7a2-51edbca3af1b",
+    "name": "RubyGems.org Registry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.\n\nContact Support:\n Name: RubyGems.org Support",
+      "type": "text/plain"
+    }
+  }
+}

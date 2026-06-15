@@ -1,0 +1,566 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RubyGems.org Registry API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Gem Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/gems/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns information about the named gem, including downloads, version, dependencies, and source URLs."
+        },
+        {
+          "info": {
+            "name": "List Gems Owned By Authenticated User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/gems.json",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns all gems owned by the authenticated user."
+        },
+        {
+          "info": {
+            "name": "Push Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/gems.json",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Submits a built .gem file for publication. Body is the binary gem file."
+        },
+        {
+          "info": {
+            "name": "Yank A Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rubygems.org/api/v1/gems/yank",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Removes a specific gem version from the index so it can no longer be installed by default."
+        },
+        {
+          "info": {
+            "name": "Search Gems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/search.json",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Searches gems by name or description and returns matching gem summaries."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Versions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Versions Of A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/versions/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns every version of the named gem ordered most-recent first."
+        },
+        {
+          "info": {
+            "name": "Get Latest Version Of A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/versions/:gem_name/latest.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns the latest stable version number for the named gem."
+        },
+        {
+          "info": {
+            "name": "Get Gem Version Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v2/rubygems/:gem_name/versions/:version.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns full details for a specific gem version, optionally filtered by platform. This is the API v2 endpoint."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Downloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Downloads For A Gem Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/downloads/:gem_full_name.json",
+            "params": [
+              {
+                "name": "gem_full_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the total download count for a specific gem version (name plus version, e.g. \"rails-7.1.3\")."
+        },
+        {
+          "info": {
+            "name": "Get Total Rubygems Download Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/downloads.json"
+          },
+          "docs": "Returns the total number of gem downloads ever counted across rubygems.org."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Owners",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Owners Of A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/owners/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns the owners (publishers) of the named gem."
+        },
+        {
+          "info": {
+            "name": "Add Owner To A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/owners/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "email",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Grants ownership of the gem to another rubygems.org user (by email)."
+        },
+        {
+          "info": {
+            "name": "Remove Owner From A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rubygems.org/api/v1/owners/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "email",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Revokes ownership of the gem from the specified user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Profiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Authenticated User Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/profiles/me.json",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns the profile of the authenticated user, including MFA level and handle."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Web Hooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/web_hooks.json",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns all webhooks registered for the authenticated user, grouped by gem."
+        },
+        {
+          "info": {
+            "name": "Register A Web Hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/web_hooks",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "gem_name",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Registers a callback URL fired when a gem (or any gem) is published. Use \"*\" as the gem name to receive global events."
+        },
+        {
+          "info": {
+            "name": "Remove A Web Hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rubygems.org/api/v1/web_hooks/remove",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Removes a previously registered webhook for the given gem and URL."
+        },
+        {
+          "info": {
+            "name": "Test Fire A Web Hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/web_hooks/fire",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "gem_name",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Synchronously fires a registered webhook for testing purposes."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Latest Gem Releases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/activity/latest.json"
+          },
+          "docs": "Returns the most recently published gem versions."
+        },
+        {
+          "info": {
+            "name": "Get Just Updated Gems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/activity/just_updated.json"
+          },
+          "docs": "Returns gems that received a new version most recently."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "API Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get An API Key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/api_key.json",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Exchanges HTTP Basic credentials for the authenticated user's API key."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OIDC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Exchange OIDC Token For Trusted Publishing API Key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/oidc/api_key_role/:token/assume_role",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Exchanges a CI provider OIDC token (GitHub Actions, GitLab CI, etc.) for a short-lived RubyGems API key scoped by a configured trusted-publishing role."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
