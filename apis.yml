@@ -6,7 +6,7 @@ description: >-
   signatures, popular HTTP/REST client gems (Faraday, http.rb, HTTParty, Excon, Typhoeus, REST Client, HTTPClient), and
   the major Ruby frameworks used to build APIs (Rails API mode, Sinatra, Grape).
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Programming Language
   - Ruby
