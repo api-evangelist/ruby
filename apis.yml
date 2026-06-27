@@ -59,7 +59,7 @@ apis:
         url: https://guides.rubygems.org/api-key-scopes/
       - type: GitHub
         url: https://github.com/rubygems/rubygems.org
-      - type: SDK
+      - type: SDKs
         url: https://github.com/rubygems/gems
       - type: OpenAPI
         url: openapi/rubygems-registry-openapi.yml
@@ -75,15 +75,15 @@ apis:
         url: json-structure/rubygems-registry-gem-structure.json
       - type: JSONStructure
         url: json-structure/rubygems-registry-version-structure.json
-      - type: Example
+      - type: Examples
         url: examples/rubygems-registry-get-gem-example.json
-      - type: Example
+      - type: Examples
         url: examples/rubygems-registry-list-versions-example.json
-      - type: Example
+      - type: Examples
         url: examples/rubygems-registry-list-owners-example.json
-      - type: Example
+      - type: Examples
         url: examples/rubygems-registry-search-example.json
-      - type: Example
+      - type: Examples
         url: examples/rubygems-registry-create-webhook-example.json
   - aid: ruby:rubygems-registry-api-v2
     name: RubyGems.org Registry API v2
@@ -269,7 +269,7 @@ common:
     url: rules/rubygems-registry-rules.yml
   - type: Vocabulary
     url: vocabulary/ruby-vocabulary.yml
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/ruby-context.jsonld
   - type: Website
     url: https://www.ruby-lang.org/
