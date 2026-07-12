@@ -1,0 +1,22 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/rubygems-registry-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: RubyGems API key issued in the user account settings.
+  sources:
+  - openapi/rubygems-registry-openapi.yml
+- name: BasicAuth
+  type: http
+  scheme: basic
+  sources:
+  - openapi/rubygems-registry-openapi.yml

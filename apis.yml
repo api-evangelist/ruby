@@ -265,6 +265,10 @@ apis:
       - type: Documentation
         url: https://github.com/ruby-grape/grape#readme
 common:
+  - type: DomainSecurity
+    url: security/ruby-domain-security.yml
+  - type: Authentication
+    url: authentication/ruby-authentication.yml
   - type: SpectralRules
     url: rules/rubygems-registry-rules.yml
   - type: Vocabulary
