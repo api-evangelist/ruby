@@ -265,6 +265,8 @@ apis:
       - type: Documentation
         url: https://github.com/ruby-grape/grape#readme
 common:
+  - type: AgenticAccess
+    url: agentic-access/ruby-agentic-access.yml
   - type: DomainSecurity
     url: security/ruby-domain-security.yml
   - type: Authentication
