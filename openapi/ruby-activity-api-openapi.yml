@@ -1,0 +1,142 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry Activity API
+  description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: 1.0.0
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+- url: https://rubygems.org
+  description: Production registry
+security:
+- ApiKeyAuth: []
+tags:
+- name: Activity
+paths:
+  /api/v1/activity/latest.json:
+    get:
+      operationId: getLatestActivity
+      summary: Get Latest Gem Releases
+      description: Returns the most recently published gem versions.
+      tags:
+      - Activity
+      responses:
+        '200':
+          description: Latest activity feed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+  /api/v1/activity/just_updated.json:
+    get:
+      operationId: getJustUpdated
+      summary: Get Just Updated Gems
+      description: Returns gems that received a new version most recently.
+      tags:
+      - Activity
+      responses:
+        '200':
+          description: Just-updated feed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+components:
+  schemas:
+    Dependency:
+      type: object
+      properties:
+        name:
+          type: string
+        requirements:
+          type: string
+    Gem:
+      type: object
+      properties:
+        name:
+          type: string
+        downloads:
+          type: integer
+        version:
+          type: string
+        version_created_at:
+          type: string
+          format: date-time
+        version_downloads:
+          type: integer
+        platform:
+          type: string
+        authors:
+          type: string
+        info:
+          type: string
+        licenses:
+          type: array
+          items:
+            type: string
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        yanked:
+          type: boolean
+        sha:
+          type: string
+        project_uri:
+          type: string
+          format: uri
+        gem_uri:
+          type: string
+          format: uri
+        homepage_uri:
+          type: string
+          format: uri
+        wiki_uri:
+          type: string
+          format: uri
+        documentation_uri:
+          type: string
+          format: uri
+        mailing_list_uri:
+          type: string
+          format: uri
+        source_code_uri:
+          type: string
+          format: uri
+        bug_tracker_uri:
+          type: string
+          format: uri
+        changelog_uri:
+          type: string
+          format: uri
+        funding_uri:
+          type: string
+          format: uri
+        dependencies:
+          type: object
+          properties:
+            development:
+              type: array
+              items:
+                $ref: '#/components/schemas/Dependency'
+            runtime:
+              type: array
+              items:
+                $ref: '#/components/schemas/Dependency'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic

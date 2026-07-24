@@ -1,0 +1,246 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry Activity Gems API
+  description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: 1.0.0
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+- url: https://rubygems.org
+  description: Production registry
+security:
+- ApiKeyAuth: []
+tags:
+- name: Gems
+paths:
+  /api/v1/gems/{gem_name}.json:
+    get:
+      operationId: getGem
+      summary: Get Gem Info
+      description: Returns information about the named gem, including downloads, version, dependencies, and source URLs.
+      tags:
+      - Gems
+      parameters:
+      - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Gem details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gem'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /api/v1/gems.json:
+    get:
+      operationId: listOwnedGems
+      summary: List Gems Owned By Authenticated User
+      description: Returns all gems owned by the authenticated user.
+      tags:
+      - Gems
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Array of owned gems
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+    post:
+      operationId: pushGem
+      summary: Push Gem
+      description: Submits a built .gem file for publication. Body is the binary gem file.
+      tags:
+      - Gems
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: Gem accepted
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /api/v1/gems/yank:
+    delete:
+      operationId: yankVersion
+      summary: Yank A Version
+      description: Removes a specific gem version from the index so it can no longer be installed by default.
+      tags:
+      - Gems
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - name: gem_name
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: platform
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Yanked
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /api/v1/search.json:
+    get:
+      operationId: searchGems
+      summary: Search Gems
+      description: Searches gems by name or description and returns matching gem summaries.
+      tags:
+      - Gems
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gem'
+components:
+  schemas:
+    Gem:
+      type: object
+      properties:
+        name:
+          type: string
+        downloads:
+          type: integer
+        version:
+          type: string
+        version_created_at:
+          type: string
+          format: date-time
+        version_downloads:
+          type: integer
+        platform:
+          type: string
+        authors:
+          type: string
+        info:
+          type: string
+        licenses:
+          type: array
+          items:
+            type: string
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        yanked:
+          type: boolean
+        sha:
+          type: string
+        project_uri:
+          type: string
+          format: uri
+        gem_uri:
+          type: string
+          format: uri
+        homepage_uri:
+          type: string
+          format: uri
+        wiki_uri:
+          type: string
+          format: uri
+        documentation_uri:
+          type: string
+          format: uri
+        mailing_list_uri:
+          type: string
+          format: uri
+        source_code_uri:
+          type: string
+          format: uri
+        bug_tracker_uri:
+          type: string
+          format: uri
+        changelog_uri:
+          type: string
+          format: uri
+        funding_uri:
+          type: string
+          format: uri
+        dependencies:
+          type: object
+          properties:
+            development:
+              type: array
+              items:
+                $ref: '#/components/schemas/Dependency'
+            runtime:
+              type: array
+              items:
+                $ref: '#/components/schemas/Dependency'
+    Dependency:
+      type: object
+      properties:
+        name:
+          type: string
+        requirements:
+          type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid API key.
+    NotFound:
+      description: Gem or resource not found.
+    Forbidden:
+      description: Caller is not authorized for this gem.
+  parameters:
+    GemName:
+      name: gem_name
+      in: path
+      required: true
+      description: Canonical gem name.
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic

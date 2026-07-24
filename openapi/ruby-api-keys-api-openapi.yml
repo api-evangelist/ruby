@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry Activity API Keys API
+  description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: 1.0.0
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+- url: https://rubygems.org
+  description: Production registry
+security:
+- ApiKeyAuth: []
+tags:
+- name: API Keys
+paths:
+  /api/v1/api_key.json:
+    get:
+      operationId: getApiKey
+      summary: Get An API Key
+      description: Exchanges HTTP Basic credentials for the authenticated user's API key.
+      tags:
+      - API Keys
+      security:
+      - BasicAuth: []
+      responses:
+        '200':
+          description: API key
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rubygems_api_key:
+                    type: string
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic

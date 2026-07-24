@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry Activity Owners API
+  description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: 1.0.0
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+- url: https://rubygems.org
+  description: Production registry
+security:
+- ApiKeyAuth: []
+tags:
+- name: Owners
+paths:
+  /api/v1/owners/{gem_name}.json:
+    get:
+      operationId: listOwners
+      summary: List Owners Of A Gem
+      description: Returns the owners (publishers) of the named gem.
+      tags:
+      - Owners
+      parameters:
+      - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Owner list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Owner'
+    post:
+      operationId: addOwner
+      summary: Add Owner To A Gem
+      description: Grants ownership of the gem to another rubygems.org user (by email).
+      tags:
+      - Owners
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GemName'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - email
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: Owner added
+    delete:
+      operationId: removeOwner
+      summary: Remove Owner From A Gem
+      description: Revokes ownership of the gem from the specified user.
+      tags:
+      - Owners
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GemName'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - email
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: Owner removed
+components:
+  schemas:
+    Owner:
+      type: object
+      properties:
+        id:
+          type: integer
+        handle:
+          type: string
+        email:
+          type: string
+          format: email
+  parameters:
+    GemName:
+      name: gem_name
+      in: path
+      required: true
+      description: Canonical gem name.
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic

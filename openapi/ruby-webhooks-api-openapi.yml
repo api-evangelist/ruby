@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry Activity Webhooks API
+  description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: 1.0.0
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+- url: https://rubygems.org
+  description: Production registry
+security:
+- ApiKeyAuth: []
+tags:
+- name: Webhooks
+paths:
+  /api/v1/web_hooks.json:
+    get:
+      operationId: listWebHooks
+      summary: List Web Hooks
+      description: Returns all webhooks registered for the authenticated user, grouped by gem.
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Webhook map
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/WebHook'
+  /api/v1/web_hooks:
+    post:
+      operationId: createWebHook
+      summary: Register A Web Hook
+      description: Registers a callback URL fired when a gem (or any gem) is published. Use "*" as the gem name to receive global events.
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - gem_name
+              - url
+              properties:
+                gem_name:
+                  type: string
+                url:
+                  type: string
+                  format: uri
+      responses:
+        '200':
+          description: Webhook created
+  /api/v1/web_hooks/remove:
+    delete:
+      operationId: removeWebHook
+      summary: Remove A Web Hook
+      description: Removes a previously registered webhook for the given gem and URL.
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - name: gem_name
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: url
+        in: query
+        required: true
+        schema:
+          type: string
+          format: uri
+      responses:
+        '200':
+          description: Webhook removed
+  /api/v1/web_hooks/fire:
+    post:
+      operationId: fireWebHook
+      summary: Test Fire A Web Hook
+      description: Synchronously fires a registered webhook for testing purposes.
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - gem_name
+              - url
+              properties:
+                gem_name:
+                  type: string
+                url:
+                  type: string
+                  format: uri
+      responses:
+        '200':
+          description: Webhook fired
+components:
+  schemas:
+    WebHook:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+        failure_count:
+          type: integer
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic

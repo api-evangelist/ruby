@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry Activity Downloads API
+  description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: 1.0.0
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+- url: https://rubygems.org
+  description: Production registry
+security:
+- ApiKeyAuth: []
+tags:
+- name: Downloads
+paths:
+  /api/v1/downloads/{gem_full_name}.json:
+    get:
+      operationId: getVersionDownloads
+      summary: Get Downloads For A Gem Version
+      description: Returns the total download count for a specific gem version (name plus version, e.g. "rails-7.1.3").
+      tags:
+      - Downloads
+      parameters:
+      - name: gem_full_name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Download count
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DownloadCount'
+  /api/v1/downloads.json:
+    get:
+      operationId: getTotalDownloads
+      summary: Get Total Rubygems Download Count
+      description: Returns the total number of gem downloads ever counted across rubygems.org.
+      tags:
+      - Downloads
+      responses:
+        '200':
+          description: Total downloads
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TotalDownloads'
+components:
+  schemas:
+    DownloadCount:
+      type: object
+      properties:
+        total_downloads:
+          type: integer
+        version_downloads:
+          type: integer
+    TotalDownloads:
+      type: object
+      properties:
+        total:
+          type: integer
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic

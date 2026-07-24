@@ -1,0 +1,135 @@
+openapi: 3.1.0
+info:
+  title: RubyGems.org Registry Activity Versions API
+  description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
+  version: 1.0.0
+  contact:
+    name: RubyGems.org Support
+    url: https://github.com/rubygems/rubygems.org
+  license:
+    name: MIT
+    url: https://github.com/rubygems/rubygems.org/blob/master/MIT-LICENSE
+servers:
+- url: https://rubygems.org
+  description: Production registry
+security:
+- ApiKeyAuth: []
+tags:
+- name: Versions
+paths:
+  /api/v1/versions/{gem_name}.json:
+    get:
+      operationId: listVersions
+      summary: List All Versions Of A Gem
+      description: Returns every version of the named gem ordered most-recent first.
+      tags:
+      - Versions
+      parameters:
+      - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Versions list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Version'
+  /api/v1/versions/{gem_name}/latest.json:
+    get:
+      operationId: getLatestVersion
+      summary: Get Latest Version Of A Gem
+      description: Returns the latest stable version number for the named gem.
+      tags:
+      - Versions
+      parameters:
+      - $ref: '#/components/parameters/GemName'
+      responses:
+        '200':
+          description: Latest version
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version:
+                    type: string
+  /api/v2/rubygems/{gem_name}/versions/{version}.json:
+    get:
+      operationId: getVersionDetails
+      summary: Get Gem Version Details
+      description: Returns full details for a specific gem version, optionally filtered by platform. This is the API v2 endpoint.
+      tags:
+      - Versions
+      parameters:
+      - $ref: '#/components/parameters/GemName'
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: platform
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Version detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+components:
+  schemas:
+    Version:
+      type: object
+      properties:
+        number:
+          type: string
+        platform:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        downloads_count:
+          type: integer
+        summary:
+          type: string
+        description:
+          type: string
+        authors:
+          type: string
+        sha:
+          type: string
+        prerelease:
+          type: boolean
+        ruby_version:
+          type: string
+        rubygems_version:
+          type: string
+        licenses:
+          type: array
+          items:
+            type: string
+        requirements:
+          type: array
+          items:
+            type: string
+  parameters:
+    GemName:
+      name: gem_name
+      in: path
+      required: true
+      description: Canonical gem name.
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: RubyGems API key issued in the user account settings.
+    BasicAuth:
+      type: http
+      scheme: basic
