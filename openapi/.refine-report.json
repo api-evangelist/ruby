@@ -1,0 +1,30 @@
+{
+  "provider": "ruby",
+  "sources": [
+    "ruby-activity-api-openapi.yml",
+    "ruby-api-keys-api-openapi.yml",
+    "ruby-downloads-api-openapi.yml",
+    "ruby-gems-api-openapi.yml",
+    "ruby-oidc-api-openapi.yml",
+    "ruby-owners-api-openapi.yml",
+    "ruby-profiles-api-openapi.yml",
+    "ruby-versions-api-openapi.yml",
+    "ruby-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "ruby-activity-api-openapi.yml",
+    "ruby-api-keys-api-openapi.yml",
+    "ruby-downloads-api-openapi.yml",
+    "ruby-gems-api-openapi.yml",
+    "ruby-oidc-api-openapi.yml",
+    "ruby-owners-api-openapi.yml",
+    "ruby-profiles-api-openapi.yml",
+    "ruby-versions-api-openapi.yml",
+    "ruby-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
