@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RubyGems.org Registry Activity API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Latest Gem Releases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/activity/latest.json"
+          },
+          "docs": "Returns the most recently published gem versions."
+        },
+        {
+          "info": {
+            "name": "Get Just Updated Gems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/activity/just_updated.json"
+          },
+          "docs": "Returns gems that received a new version most recently."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

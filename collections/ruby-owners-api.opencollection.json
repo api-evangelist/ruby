@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RubyGems.org Registry Activity Owners API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Owners",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Owners Of A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/owners/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns the owners (publishers) of the named gem."
+        },
+        {
+          "info": {
+            "name": "Add Owner To A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/owners/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "email",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Grants ownership of the gem to another rubygems.org user (by email)."
+        },
+        {
+          "info": {
+            "name": "Remove Owner From A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rubygems.org/api/v1/owners/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "email",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Revokes ownership of the gem from the specified user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

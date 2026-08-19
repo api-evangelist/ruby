@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RubyGems.org Registry Activity Gems API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Gem Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/gems/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns information about the named gem, including downloads, version, dependencies, and source URLs."
+        },
+        {
+          "info": {
+            "name": "List Gems Owned By Authenticated User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/gems.json",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns all gems owned by the authenticated user."
+        },
+        {
+          "info": {
+            "name": "Push Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/gems.json",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Submits a built .gem file for publication. Body is the binary gem file."
+        },
+        {
+          "info": {
+            "name": "Yank A Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rubygems.org/api/v1/gems/yank",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Removes a specific gem version from the index so it can no longer be installed by default."
+        },
+        {
+          "info": {
+            "name": "Search Gems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/search.json",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Searches gems by name or description and returns matching gem summaries."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

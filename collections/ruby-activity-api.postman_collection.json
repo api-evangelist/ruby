@@ -1,0 +1,217 @@
+{
+  "item": [
+    {
+      "id": "a9126141-caed-468f-84be-ca7cff5d1bb9",
+      "name": "Activity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "11f9fcbe-e4d9-467d-af79-98e31200e0ce",
+          "name": "Get Latest Gem Releases",
+          "request": {
+            "name": "Get Latest Gem Releases",
+            "description": {
+              "content": "Returns the most recently published gem versions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "activity",
+                "latest.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ebea22c-28da-406d-aaac-ffb7983506f0",
+              "name": "Latest activity feed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "activity",
+                    "latest.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"downloads\": 9012,\n    \"version\": \"string\",\n    \"version_created_at\": \"1985-05-26T10:13:01.623Z\",\n    \"version_downloads\": 1415,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"http://sHmVsEKdGUeTzKBrolmER.xmsnjPNm-EwWhsPeyhxRrjNTI81CoI2yTx2OAerPY,R\",\n    \"gem_uri\": \"http://ulgJ.uvg,Eznl+,tUUSUJ6JM,YaoXHm.AZnm0wi,Xr80PZLj4ZMUKiM2BeUunkaiCVdnC\",\n    \"homepage_uri\": \"http://UxonAaOYnuZVHmYCUEVzgsCkiqbKD.rzhcBC.+4B,9G0dn3zs.bVAcbsTZlmlOz9KhBqj.-orcF7Qdl8op\",\n    \"wiki_uri\": \"http://HGMYGUGftaotBebW.mdgB7Ta4QYUYnndb4Yc0Zv5JSK1JTO1NOO82nGaYbN\",\n    \"documentation_uri\": \"https://FQatxUBw.hpqSRLo0dR-AWyEe+sWeyeNHPxyTJquR1aR4tPOXzNxz4akkHK\",\n    \"mailing_list_uri\": \"https://fwBHvUkFWpppZyrhHcoi.hthbm,vE91a\",\n    \"source_code_uri\": \"http://YDjYpDLGpGoudZqmagpPJJotmCyuo.niRkdX3-6zONK1BA1UqTlv5aNTnbknP6yLYoIrRyVVWXslEHeFsw1IWhG5atFnhyL5\",\n    \"bug_tracker_uri\": \"https://oEmrurBqsEkPaWLhBBPLK.fauqrz2ToLvniyRcsWuVrR4Js\",\n    \"changelog_uri\": \"https://iDITZZcogjcpIIzVIAFKA.srlpj+L391LqS-7SGpv1lktiA4CULzrVQC7vjSHrgzy7\",\n    \"funding_uri\": \"https://RwoDavDxVuZbIJEPAC.gcjxFMkUQ8CDR,N3C\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"name\": \"string\",\n    \"downloads\": 7524,\n    \"version\": \"string\",\n    \"version_created_at\": \"1954-06-19T05:20:53.314Z\",\n    \"version_downloads\": 2388,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"https://PznKdpJamuaHvLjeDfLoyhUjUYl.hlbrVhU1OyC1pEGcCHtLynnDIJQSsaeD1nD-ajUdj2,.47m,CxX\",\n    \"gem_uri\": \"https://NqLeCJXOG.belczAr5V-zprPpAkH3q\",\n    \"homepage_uri\": \"http://fuBqfZcc.kzbep0lGy-KlrvF-Zdfnn7-7iYX\",\n    \"wiki_uri\": \"https://cbBpAhGJyCHzMdIzzccVQaUAEHWTBqI.zjcKkX6Mf,xOltT9jTMUel5tSUEECKvf\",\n    \"documentation_uri\": \"http://owM.qigvNzpwP8k0fxUUNEIExyN-lChfXS2VQcx1UQ0AUzVnIOKW1tEBZ9\",\n    \"mailing_list_uri\": \"https://yQbEKPCAYbMTrlMpzgUvPJ.hujgE,Mnz4L12pXQxgc99robq3fllqJOWS.9p49\",\n    \"source_code_uri\": \"http://BSuYyHEiGWTakZsoOWCzNo.olpjbKTEPquF-7KDmkCrIYIj\",\n    \"bug_tracker_uri\": \"https://MlwLOUeVqfiEYhAubBthphoQAqPS.tmLiIqRaTIMgp8\",\n    \"changelog_uri\": \"http://lE.uctkfiiS7Rm64FjtuqtWGmUsbnfO5QeAFwBt\",\n    \"funding_uri\": \"https://UfiOIcFDkEdBsQJxbhmvuIlq.rrhvvHrMVAqzLQ0dUlAcm,GUmyM+Fvhi0UoPrCqv,XV0wtseo7B6\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c140bfcc-97a1-4df9-a1f2-d6e98bb7d8b7",
+          "name": "Get Just Updated Gems",
+          "request": {
+            "name": "Get Just Updated Gems",
+            "description": {
+              "content": "Returns gems that received a new version most recently.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "activity",
+                "just_updated.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b78a8da2-de12-480d-8ce6-687e28a066e9",
+              "name": "Just-updated feed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "activity",
+                    "just_updated.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"downloads\": 9012,\n    \"version\": \"string\",\n    \"version_created_at\": \"1985-05-26T10:13:01.623Z\",\n    \"version_downloads\": 1415,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"http://sHmVsEKdGUeTzKBrolmER.xmsnjPNm-EwWhsPeyhxRrjNTI81CoI2yTx2OAerPY,R\",\n    \"gem_uri\": \"http://ulgJ.uvg,Eznl+,tUUSUJ6JM,YaoXHm.AZnm0wi,Xr80PZLj4ZMUKiM2BeUunkaiCVdnC\",\n    \"homepage_uri\": \"http://UxonAaOYnuZVHmYCUEVzgsCkiqbKD.rzhcBC.+4B,9G0dn3zs.bVAcbsTZlmlOz9KhBqj.-orcF7Qdl8op\",\n    \"wiki_uri\": \"http://HGMYGUGftaotBebW.mdgB7Ta4QYUYnndb4Yc0Zv5JSK1JTO1NOO82nGaYbN\",\n    \"documentation_uri\": \"https://FQatxUBw.hpqSRLo0dR-AWyEe+sWeyeNHPxyTJquR1aR4tPOXzNxz4akkHK\",\n    \"mailing_list_uri\": \"https://fwBHvUkFWpppZyrhHcoi.hthbm,vE91a\",\n    \"source_code_uri\": \"http://YDjYpDLGpGoudZqmagpPJJotmCyuo.niRkdX3-6zONK1BA1UqTlv5aNTnbknP6yLYoIrRyVVWXslEHeFsw1IWhG5atFnhyL5\",\n    \"bug_tracker_uri\": \"https://oEmrurBqsEkPaWLhBBPLK.fauqrz2ToLvniyRcsWuVrR4Js\",\n    \"changelog_uri\": \"https://iDITZZcogjcpIIzVIAFKA.srlpj+L391LqS-7SGpv1lktiA4CULzrVQC7vjSHrgzy7\",\n    \"funding_uri\": \"https://RwoDavDxVuZbIJEPAC.gcjxFMkUQ8CDR,N3C\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  },\n  {\n    \"name\": \"string\",\n    \"downloads\": 7524,\n    \"version\": \"string\",\n    \"version_created_at\": \"1954-06-19T05:20:53.314Z\",\n    \"version_downloads\": 2388,\n    \"platform\": \"string\",\n    \"authors\": \"string\",\n    \"info\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"metadata\": {\n      \"key_0\": \"string\"\n    },\n    \"yanked\": false,\n    \"sha\": \"string\",\n    \"project_uri\": \"https://PznKdpJamuaHvLjeDfLoyhUjUYl.hlbrVhU1OyC1pEGcCHtLynnDIJQSsaeD1nD-ajUdj2,.47m,CxX\",\n    \"gem_uri\": \"https://NqLeCJXOG.belczAr5V-zprPpAkH3q\",\n    \"homepage_uri\": \"http://fuBqfZcc.kzbep0lGy-KlrvF-Zdfnn7-7iYX\",\n    \"wiki_uri\": \"https://cbBpAhGJyCHzMdIzzccVQaUAEHWTBqI.zjcKkX6Mf,xOltT9jTMUel5tSUEECKvf\",\n    \"documentation_uri\": \"http://owM.qigvNzpwP8k0fxUUNEIExyN-lChfXS2VQcx1UQ0AUzVnIOKW1tEBZ9\",\n    \"mailing_list_uri\": \"https://yQbEKPCAYbMTrlMpzgUvPJ.hujgE,Mnz4L12pXQxgc99robq3fllqJOWS.9p49\",\n    \"source_code_uri\": \"http://BSuYyHEiGWTakZsoOWCzNo.olpjbKTEPquF-7KDmkCrIYIj\",\n    \"bug_tracker_uri\": \"https://MlwLOUeVqfiEYhAubBthphoQAqPS.tmLiIqRaTIMgp8\",\n    \"changelog_uri\": \"http://lE.uctkfiiS7Rm64FjtuqtWGmUsbnfO5QeAFwBt\",\n    \"funding_uri\": \"https://UfiOIcFDkEdBsQJxbhmvuIlq.rrhvvHrMVAqzLQ0dUlAcm,GUmyM+Fvhi0UoPrCqv,XV0wtseo7B6\",\n    \"dependencies\": {\n      \"development\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ],\n      \"runtime\": [\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"requirements\": \"string\"\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rubygems.org",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "766bccfe-4150-4a88-bf10-f15abc0d7263",
+    "name": "RubyGems.org Registry Activity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.\n\nContact Support:\n Name: RubyGems.org Support",
+      "type": "text/plain"
+    }
+  }
+}

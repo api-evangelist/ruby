@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RubyGems.org Registry Activity Versions API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Versions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Versions Of A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/versions/:gem_name.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns every version of the named gem ordered most-recent first."
+        },
+        {
+          "info": {
+            "name": "Get Latest Version Of A Gem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/versions/:gem_name/latest.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              }
+            ]
+          },
+          "docs": "Returns the latest stable version number for the named gem."
+        },
+        {
+          "info": {
+            "name": "Get Gem Version Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v2/rubygems/:gem_name/versions/:version.json",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "path",
+                "description": "Canonical gem name."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns full details for a specific gem version, optionally filtered by platform. This is the API v2 endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RubyGems.org Registry Activity Downloads API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Downloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Downloads For A Gem Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/downloads/:gem_full_name.json",
+            "params": [
+              {
+                "name": "gem_full_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the total download count for a specific gem version (name plus version, e.g. \"rails-7.1.3\")."
+        },
+        {
+          "info": {
+            "name": "Get Total Rubygems Download Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/downloads.json"
+          },
+          "docs": "Returns the total number of gem downloads ever counted across rubygems.org."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

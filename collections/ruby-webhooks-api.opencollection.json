@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RubyGems.org Registry Activity Webhooks API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Web Hooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rubygems.org/api/v1/web_hooks.json",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns all webhooks registered for the authenticated user, grouped by gem."
+        },
+        {
+          "info": {
+            "name": "Register A Web Hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/web_hooks",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "gem_name",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Registers a callback URL fired when a gem (or any gem) is published. Use \"*\" as the gem name to receive global events."
+        },
+        {
+          "info": {
+            "name": "Remove A Web Hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rubygems.org/api/v1/web_hooks/remove",
+            "params": [
+              {
+                "name": "gem_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Removes a previously registered webhook for the given gem and URL."
+        },
+        {
+          "info": {
+            "name": "Test Fire A Web Hook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rubygems.org/api/v1/web_hooks/fire",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "gem_name",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Synchronously fires a registered webhook for testing purposes."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,370 @@
+{
+  "item": [
+    {
+      "id": "1cf2a9c9-cbbe-457c-a89d-e9226435967d",
+      "name": "Versions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "166c2fbb-db7c-4420-a98b-bac2e6d7167f",
+          "name": "List All Versions Of A Gem",
+          "request": {
+            "name": "List All Versions Of A Gem",
+            "description": {
+              "content": "Returns every version of the named gem ordered most-recent first.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "versions",
+                "{{gem_name}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "06b4fcd7-fadf-4553-ae5b-e47e435f0f39",
+              "name": "Versions list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "versions",
+                    "{{gem_name}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"number\": \"string\",\n    \"platform\": \"string\",\n    \"created_at\": \"1974-08-19T14:56:36.345Z\",\n    \"downloads_count\": 2139,\n    \"summary\": \"string\",\n    \"description\": \"string\",\n    \"authors\": \"string\",\n    \"sha\": \"string\",\n    \"prerelease\": true,\n    \"ruby_version\": \"string\",\n    \"rubygems_version\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"requirements\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"number\": \"string\",\n    \"platform\": \"string\",\n    \"created_at\": \"2012-11-28T12:22:27.746Z\",\n    \"downloads_count\": 4215,\n    \"summary\": \"string\",\n    \"description\": \"string\",\n    \"authors\": \"string\",\n    \"sha\": \"string\",\n    \"prerelease\": true,\n    \"ruby_version\": \"string\",\n    \"rubygems_version\": \"string\",\n    \"licenses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"requirements\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2379145-3034-4777-a511-dbf7a711b2b2",
+          "name": "Get Latest Version Of A Gem",
+          "request": {
+            "name": "Get Latest Version Of A Gem",
+            "description": {
+              "content": "Returns the latest stable version number for the named gem.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "versions",
+                ":gem_name",
+                "latest.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gem_name",
+                  "description": "(Required) Canonical gem name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d5bfd55-bd90-442a-bd27-892f54d8c720",
+              "name": "Latest version",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "versions",
+                    ":gem_name",
+                    "latest.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gem_name",
+                      "description": "(Required) Canonical gem name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f6a751e-6fe6-452a-bcfb-e985951f1486",
+          "name": "Get Gem Version Details",
+          "request": {
+            "name": "Get Gem Version Details",
+            "description": {
+              "content": "Returns full details for a specific gem version, optionally filtered by platform. This is the API v2 endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "rubygems",
+                ":gem_name",
+                "versions",
+                "{{version}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "platform",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gem_name",
+                  "description": "(Required) Canonical gem name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4aff004-202a-4f9c-8141-1b608c9d3950",
+              "name": "Version detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "rubygems",
+                    ":gem_name",
+                    "versions",
+                    "{{version}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "platform",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gem_name",
+                      "description": "(Required) Canonical gem name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"number\": \"string\",\n  \"platform\": \"string\",\n  \"created_at\": \"1988-10-12T11:39:02.094Z\",\n  \"downloads_count\": 2060,\n  \"summary\": \"string\",\n  \"description\": \"string\",\n  \"authors\": \"string\",\n  \"sha\": \"string\",\n  \"prerelease\": true,\n  \"ruby_version\": \"string\",\n  \"rubygems_version\": \"string\",\n  \"licenses\": [\n    \"string\",\n    \"string\"\n  ],\n  \"requirements\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rubygems.org",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Canonical gem name.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "gem_name"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "version"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d20f0615-e9b0-405c-8a16-8a829b430172",
+    "name": "RubyGems.org Registry Activity Versions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.\n\nContact Support:\n Name: RubyGems.org Support",
+      "type": "text/plain"
+    }
+  }
+}
