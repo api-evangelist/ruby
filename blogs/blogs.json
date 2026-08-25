@@ -20,8 +20,7 @@
       "feed_url": "https://www.ruby-lang.org/en/community/",
       "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "method": "none"
     },
     {
       "source": "https://status.rubygems.org/history.atom",
@@ -38,6 +37,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 55,
-  "fetched": "2026-08-15T12:11:08Z"
+  "post_count": 56,
+  "fetched": "2026-08-22T20:20:02Z"
 }
