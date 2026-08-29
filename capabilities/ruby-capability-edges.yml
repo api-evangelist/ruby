@@ -1,0 +1,27 @@
+slug: ruby
+provider: Ruby Programming Language and Popular API Gems
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Webhooks
+  spec_file: ruby-webhooks-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.7
+  evidence: POST /api/v1/web_hooks  createWebHook  Register A Web Hook; DELETE /api/v1/web_hooks/remove;
+    POST /api/v1/web_hooks/fire  Test Fire A Web Hook
+  reason: Operations are the lifecycle of outbound webhook subscriptions on the RubyGems platform (register,
+    list, remove, test-fire), which is exactly Webhook & Event Subscription Management within developer
+    platform / API ecosystem management. Confidence held moderate because webhook plumbing is generic
+    and the surface is small.

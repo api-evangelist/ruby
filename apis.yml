@@ -638,6 +638,9 @@ apis:
   - type: Examples
     url: examples/rubygems-registry-create-webhook-example.json
 common:
+  - type: CapabilityMap
+    url: capabilities/ruby-capability-edges.yml
+    name: Ruby Programming Language and Popular API Gems Business Capability Map
   - type: IssueTracker
     url: https://github.com/ruby/ruby/issues
   - type: Releases
