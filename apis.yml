@@ -6,6 +6,18 @@ description: >-
   signatures, popular HTTP/REST client gems (Faraday, http.rb, HTTParty, Excon, Typhoeus, REST Client, HTTPClient), and
   the major Ruby frameworks used to build APIs (Rails API mode, Sinatra, Grape).
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -626,6 +638,12 @@ apis:
   - type: Examples
     url: examples/rubygems-registry-create-webhook-example.json
 common:
+  - type: IssueTracker
+    url: https://github.com/ruby/ruby/issues
+  - type: Releases
+    url: https://github.com/ruby/ruby/releases
+  - type: ContributionGuide
+    url: https://github.com/ruby/ruby/blob/master/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/ruby-agentic-access.yml
   - type: DomainSecurity
