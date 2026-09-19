@@ -37,6 +37,15 @@ tags:
 - Ruby
 - HTTP
 - REST
+- API Client
+- Framework
+- Libraries
+- Package Registry
+tags_raw:
+- Programming Language
+- Ruby
+- HTTP
+- REST
 - API Clients
 - Frameworks
 - Libraries
@@ -69,6 +78,10 @@ apis:
   humanURL: https://guides.rubygems.org/rubygems-org-api-v2/
   baseURL: https://rubygems.org/api/v2
   tags:
+  - Package Registry
+  - REST
+  - Public APIs
+  tags_raw:
   - Package Registry
   - REST
   - Public API
