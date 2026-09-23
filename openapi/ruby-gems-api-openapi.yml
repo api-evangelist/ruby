@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: RubyGems.org Registry Activity Gems API
+  title: RubyGems.org Registry Gems API
   description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
   version: 1.0.0
   contact:
@@ -139,6 +139,13 @@ paths:
                 items:
                   $ref: '#/components/schemas/Gem'
 components:
+  responses:
+    Forbidden:
+      description: Caller is not authorized for this gem.
+    Unauthorized:
+      description: Missing or invalid API key.
+    NotFound:
+      description: Gem or resource not found.
   schemas:
     Gem:
       type: object
@@ -220,13 +227,6 @@ components:
           type: string
         requirements:
           type: string
-  responses:
-    Unauthorized:
-      description: Missing or invalid API key.
-    NotFound:
-      description: Gem or resource not found.
-    Forbidden:
-      description: Caller is not authorized for this gem.
   parameters:
     GemName:
       name: gem_name

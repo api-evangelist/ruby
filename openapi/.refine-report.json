@@ -1,19 +1,11 @@
 {
   "provider": "ruby",
   "sources": [
-    "ruby-activity-api-openapi.yml",
-    "ruby-api-keys-api-openapi.yml",
-    "ruby-downloads-api-openapi.yml",
-    "ruby-gems-api-openapi.yml",
-    "ruby-oidc-api-openapi.yml",
-    "ruby-owners-api-openapi.yml",
-    "ruby-profiles-api-openapi.yml",
-    "ruby-versions-api-openapi.yml",
-    "ruby-webhooks-api-openapi.yml"
+    "_original/rubygems-registry-openapi.yml"
   ],
   "outputs": [
-    "ruby-activity-api-openapi.yml",
     "ruby-api-keys-api-openapi.yml",
+    "ruby-activity-api-openapi.yml",
     "ruby-downloads-api-openapi.yml",
     "ruby-gems-api-openapi.yml",
     "ruby-oidc-api-openapi.yml",
@@ -25,6 +17,20 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "rubygems-registry-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ruby-activity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-api-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-downloads-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-gems-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-oidc-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-owners-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-versions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ruby-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

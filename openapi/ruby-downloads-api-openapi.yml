@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: RubyGems.org Registry Activity Downloads API
+  title: RubyGems.org Registry Downloads API
   description: OpenAPI description of the public REST API for rubygems.org, the Ruby community's gem hosting service. Covers the v1 surface documented at https://guides.rubygems.org/rubygems-org-api/ and the v2 versions endpoint documented at https://guides.rubygems.org/rubygems-org-api-v2/.
   version: 1.0.0
   contact:
@@ -53,17 +53,17 @@ paths:
                 $ref: '#/components/schemas/TotalDownloads'
 components:
   schemas:
+    TotalDownloads:
+      type: object
+      properties:
+        total:
+          type: integer
     DownloadCount:
       type: object
       properties:
         total_downloads:
           type: integer
         version_downloads:
-          type: integer
-    TotalDownloads:
-      type: object
-      properties:
-        total:
           type: integer
   securitySchemes:
     ApiKeyAuth:
