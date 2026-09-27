@@ -8,6 +8,10 @@ description: 'A profile of the Ruby programming language ecosystem from an API p
 type: Index
 deliveryModel:
   model: unknown
+  license_evidence:
+    repo: ruby/ruby
+    spdx: NOASSERTION
+    stars: 23756
   open_source: unknown
   commercial: false
   callable_host: true
@@ -16,7 +20,7 @@ deliveryModel:
   source:
   - openapi
   - repository-unlicensed
-  generated: '2026-08-28'
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -39,7 +43,7 @@ tags:
 - REST
 - API Client
 - Framework
-- Libraries
+- Library
 - Package Registry
 tags_raw:
 - Programming Language
