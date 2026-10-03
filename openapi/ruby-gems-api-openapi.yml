@@ -142,18 +142,10 @@ components:
   responses:
     Forbidden:
       description: Caller is not authorized for this gem.
-    NotFound:
-      description: Gem or resource not found.
     Unauthorized:
       description: Missing or invalid API key.
-  parameters:
-    GemName:
-      name: gem_name
-      in: path
-      required: true
-      description: Canonical gem name.
-      schema:
-        type: string
+    NotFound:
+      description: Gem or resource not found.
   schemas:
     Dependency:
       type: object
@@ -235,6 +227,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Dependency'
+  parameters:
+    GemName:
+      name: gem_name
+      in: path
+      required: true
+      description: Canonical gem name.
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
