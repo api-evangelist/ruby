@@ -53,17 +53,17 @@ paths:
                 $ref: '#/components/schemas/TotalDownloads'
 components:
   schemas:
+    TotalDownloads:
+      type: object
+      properties:
+        total:
+          type: integer
     DownloadCount:
       type: object
       properties:
         total_downloads:
           type: integer
         version_downloads:
-          type: integer
-    TotalDownloads:
-      type: object
-      properties:
-        total:
           type: integer
   securitySchemes:
     ApiKeyAuth:
