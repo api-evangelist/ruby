@@ -1,0 +1,26 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- https://github.com/marketplace?type=actions
+marketplace_apps: []
+edges:
+- partner_name: GitHub Marketplace (actions)
+  partner: github-actions
+  partner_match: aggregator
+  type: marketplace
+  marketplace: github-actions
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+  listing_count: 2
+  apps:
+  - Setup Ruby, JRuby and TruffleRuby
+  - Setup Ruby Pkgs
+  publisher_name: The Ruby Programming Language
+  badges:
+  - Verified creator
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+source:
+- https://github.com/marketplace?type=actions
