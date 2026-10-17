@@ -81,14 +81,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Version'
 components:
-  parameters:
-    GemName:
-      name: gem_name
-      in: path
-      required: true
-      description: Canonical gem name.
-      schema:
-        type: string
   schemas:
     Version:
       type: object
@@ -124,6 +116,14 @@ components:
           type: array
           items:
             type: string
+  parameters:
+    GemName:
+      name: gem_name
+      in: path
+      required: true
+      description: Canonical gem name.
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

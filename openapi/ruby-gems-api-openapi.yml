@@ -221,10 +221,10 @@ components:
               items:
                 $ref: '#/components/schemas/Dependency'
   responses:
-    NotFound:
-      description: Gem or resource not found.
     Unauthorized:
       description: Missing or invalid API key.
+    NotFound:
+      description: Gem or resource not found.
     Forbidden:
       description: Caller is not authorized for this gem.
   parameters:
