@@ -429,6 +429,8 @@ apis:
   humanURL: https://docs.ruby-lang.org/en/master/Net/HTTP.html
   baseURL: https://rubygems.org/api/v1
   tags:
+  - OpenID Connect
+  tags_raw:
   - OIDC
   properties:
   - type: OpenAPI
