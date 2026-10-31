@@ -1,4 +1,4 @@
-# Ruby Programming Language and Popular API Gems (ruby)
+# Ruby Programming Language and Popular API Gems
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,345 +66,175 @@
 
 A profile of the Ruby programming language ecosystem from an API perspective: the language and its standard library HTTP surface (Net::HTTP), the rubygems.org package registry and its public v1/v2 REST API, Bundler, RBS type signatures, popular HTTP/REST client gems (Faraday, http.rb, HTTParty, Excon, Typhoeus, REST Client, HTTPClient), and the major Ruby frameworks used to build APIs (Rails API mode, Sinatra, Grape).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ruby/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ruby/refs/heads/main/apis.yml)
+**Areas:** Programming Language · Ruby · HTTP · REST · API Client · Framework · Library · Package Registry
 
-## Scope
+## Ruby Programming Language and Popular API Gems on APIs.io
 
-- **Type:** Index
+Everything profiled for Ruby Programming Language and Popular API Gems is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ruby/](https://apis.io/providers/ruby/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (23)
 
-- Programming Language
-- Ruby
-- HTTP
-- REST
-- API Clients
-- Frameworks
-- Libraries
-- Package Registry
+- [Net::HTTP (Ruby Standard Library)](https://apis.io/apis/ruby/net-http/) — The HTTP client class shipped with the Ruby standard library. Provides class and instance methods for GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS, TRACE…
+- [RubyGems.org Registry API v2](https://apis.io/apis/ruby/rubygems-registry-api-v2/) — Version 2 of the rubygems.org registry API. Adds gem version detail endpoints with optional platform query parameter, returning richer metadata than v1.
+- [Bundler](https://apis.io/apis/ruby/bundler/) — Dependency manager for Ruby. Reads a Gemfile, resolves and installs gems from rubygems.org or alternate sources, and writes Gemfile.lock for reproducible…
+- [RBS (Ruby Type Signatures)](https://apis.io/apis/ruby/rbs/) — A language for describing the structure of Ruby programs. Lets developers declare classes, modules, method signatures, instance variables and inheritance in…
+- [Faraday](https://apis.io/apis/ruby/faraday/) — Simple but flexible HTTP client library with a common interface over many adapters (Net::HTTP, Typhoeus, Patron, Excon, HTTPClient, and others) and…
+- [HTTParty](https://apis.io/apis/ruby/httparty/) — HTTP client gem that "makes consuming RESTful web services dead easy" via a class-level DSL. Wraps Net::HTTP with parsing, query handling, and…
+- [http.rb](https://apis.io/apis/ruby/http-rb/) — Fast Ruby HTTP client built on the llhttp parser with a chainable request-building API, streaming bodies, persistent connections, and fine-grained timeout…
+- [Excon](https://apis.io/apis/ruby/excon/) — EXtended HTTP(S) CONnections library focused on performance, persistent connections, and predictable behavior. Used as an adapter under Faraday and inside…
+- [Typhoeus](https://apis.io/apis/ruby/typhoeus/) — Libcurl-based HTTP client built for running HTTP requests in parallel. Pairs well with Hydra for fan-out integrations against many APIs at once.
+- [REST Client](https://apis.io/apis/ruby/rest-client/) — Simple HTTP and REST client for Ruby inspired by Sinatra's microframework style. Provides class-level GET/POST/PUT/DELETE helpers.
+- [HTTPClient](https://apis.io/apis/ruby/httpclient/) — Long-standing Ruby HTTP client providing "the functionality of libwww-perl (LWP) in Ruby". Supports keep-alive, cookies, proxies, and SSL.
+- [Ruby on Rails (API Mode)](https://apis.io/apis/ruby/rails-api/) — Rails generated with the --api flag boots a slimmer middleware stack and an ApplicationController inheriting from ActionController::API (rather than…
+- [Sinatra](https://apis.io/apis/ruby/sinatra/) — "DSL for quickly creating web applications in Ruby with minimal effort." Widely used to stand up small HTTP APIs and microservices without the ceremony of a…
+- [Grape](https://apis.io/apis/ruby/grape/) — "Opinionated framework for creating REST-like APIs in Ruby." Provides a routing DSL with parameter validation, versioning, and content-negotiation helpers;…
+- [Ruby Programming Language and Popular API Gems Activity API](https://apis.io/apis/ruby/ruby-activity-api/) — The Activity API from Ruby Programming Language and Popular API Gems — 2 operation(s) for activity.
+- [Ruby Programming Language and Popular API Gems API Keys API](https://apis.io/apis/ruby/ruby-api-keys-api/) — The API Keys API from Ruby Programming Language and Popular API Gems — 1 operation(s) for api keys.
+- [Ruby Programming Language and Popular API Gems Downloads API](https://apis.io/apis/ruby/ruby-downloads-api/) — The Downloads API from Ruby Programming Language and Popular API Gems — 2 operation(s) for downloads.
+- [Ruby Programming Language and Popular API Gems API](https://apis.io/apis/ruby/ruby-gems-api/) — The Gems API from Ruby Programming Language and Popular API Gems — 4 operation(s) for gems.
+- [Ruby Programming Language and Popular API Gems OIDC API](https://apis.io/apis/ruby/ruby-oidc-api/) — The OIDC API from Ruby Programming Language and Popular API Gems — 1 operation(s) for oidc.
+- [Ruby Programming Language and Popular API Gems Owners API](https://apis.io/apis/ruby/ruby-owners-api/) — The Owners API from Ruby Programming Language and Popular API Gems — 1 operation(s) for owners.
+- [Ruby Programming Language and Popular API Gems Profiles API](https://apis.io/apis/ruby/ruby-profiles-api/) — The Profiles API from Ruby Programming Language and Popular API Gems — 1 operation(s) for profiles.
+- [Ruby Programming Language and Popular API Gems Versions API](https://apis.io/apis/ruby/ruby-versions-api/) — The Versions API from Ruby Programming Language and Popular API Gems — 3 operation(s) for versions.
+- [Ruby Programming Language and Popular API Gems Webhooks API](https://apis.io/apis/ruby/ruby-webhooks-api/) — The Webhooks API from Ruby Programming Language and Popular API Gems — 4 operation(s) for webhooks.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Net::HTTP (Ruby Standard Library)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The HTTP client class shipped with the Ruby standard library. Provides class and instance methods for GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS, TRACE plus WebDAV methods (COPY, LOCK, MKCOL, MOVE, PROPFIND, PROPPATCH, UNLOCK), TLS, proxy support, and configurable timeouts. Backs many higher-level gems such as Faraday's default adapter.
+- [Ruby Agentic Access](https://apis.io/agentic-access/ruby/ruby-agentic-access/)
 
-- **Human URL:** [https://docs.ruby-lang.org/en/master/Net/HTTP.html](https://docs.ruby-lang.org/en/master/Net/HTTP.html)
+#### JSON Schema (4)
 
-#### Tags
+The data models the API reads and writes.
 
-- HTTP Client
-- Standard Library
-- Built-In
+- [Gem](https://apis.io/schemas/ruby/rubygems-registry-gem/)
+- [Owner](https://apis.io/schemas/ruby/rubygems-registry-owner/)
+- [Version](https://apis.io/schemas/ruby/rubygems-registry-version/)
+- [WebHook](https://apis.io/schemas/ruby/rubygems-registry-webhook/)
 
-#### Properties
+#### JSON Structure (2)
 
-- [Documentation](https://docs.ruby-lang.org/en/master/Net/HTTP.html)
-- [Git Hub](https://github.com/ruby/net-http)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-### RubyGems.org Registry API v1
+- [Rubygems Registry Gem Structure](https://apis.io/json-structure/ruby/rubygems-registry-gem-structure/)
+- [Rubygems Registry Version Structure](https://apis.io/json-structure/ruby/rubygems-registry-version-structure/)
 
-Public REST API for the rubygems.org package registry. Endpoints cover gems, versions, downloads, owners, profiles, web hooks, activity, API keys, and OIDC/trusted-publishing token exchange. Authentication is via an API key in the Authorization header with optional OTP header for MFA. Responses available as JSON or YAML.
+#### JSON-LD (1)
 
-- **Human URL:** [https://guides.rubygems.org/rubygems-org-api/](https://guides.rubygems.org/rubygems-org-api/)
-- **Base URL:** `https://rubygems.org/api/v1`
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Ruby Context](https://apis.io/jsonld/ruby/ruby-context/)
 
-- Package Registry
-- REST
-- Public API
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://guides.rubygems.org/rubygems-org-api/)
-- [API Reference](https://guides.rubygems.org/rubygems-org-api/)
-- [Authentication](https://guides.rubygems.org/api-key-scopes/)
-- [Git Hub](https://github.com/rubygems/rubygems.org)
-- [SDK](https://github.com/rubygems/gems)
-- [OpenAPI](openapi/rubygems-registry-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/rubygems-registry-gem-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/rubygems-registry-version-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/rubygems-registry-owner-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/rubygems-registry-webhook-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/rubygems-registry-gem-structure.json)
-- [JSON Structure](json-structure/rubygems-registry-version-structure.json)
-- [Example](examples/rubygems-registry-get-gem-example.json)
-- [Example](examples/rubygems-registry-list-versions-example.json)
-- [Example](examples/rubygems-registry-list-owners-example.json)
-- [Example](examples/rubygems-registry-search-example.json)
-- [Example](examples/rubygems-registry-create-webhook-example.json)
+- [Ruby Programming Language Vocabulary](https://apis.io/vocabularies/ruby/ruby-vocabulary/)
 
-### RubyGems.org Registry API v2
+#### Examples (2)
 
-Version 2 of the rubygems.org registry API. Adds gem version detail endpoints with optional platform query parameter, returning richer metadata than v1.
+Example requests and responses.
 
-- **Human URL:** [https://guides.rubygems.org/rubygems-org-api-v2/](https://guides.rubygems.org/rubygems-org-api-v2/)
-- **Base URL:** `https://rubygems.org/api/v2`
+- [Rubygems Registry Create Webhook Example](https://apis.io/examples/ruby/rubygems-registry-create-webhook-example/)
+- [Rubygems Registry Get Gem Example](https://apis.io/examples/ruby/rubygems-registry-get-gem-example/)
 
-#### Tags
+#### Collections (10)
 
-- Package Registry
-- REST
-- Public API
+Postman and Open Collection request collections.
 
-#### Properties
+- [RubyGems.org Registry Activity API](https://apis.io/collections/ruby/open-ruby-activity-api/)
+- [RubyGems.org Registry Activity API Keys API](https://apis.io/collections/ruby/open-ruby-api-keys-api/)
+- [RubyGems.org Registry Activity Downloads API](https://apis.io/collections/ruby/open-ruby-downloads-api/)
+- [RubyGems.org Registry Activity Gems API](https://apis.io/collections/ruby/open-ruby-gems-api/)
+- [RubyGems.org Registry Activity OIDC API](https://apis.io/collections/ruby/open-ruby-oidc-api/)
+- [RubyGems.org Registry Activity Owners API](https://apis.io/collections/ruby/open-ruby-owners-api/)
+- [RubyGems.org Registry Activity Profiles API](https://apis.io/collections/ruby/open-ruby-profiles-api/)
+- [RubyGems.org Registry Activity Versions API](https://apis.io/collections/ruby/open-ruby-versions-api/)
+- [RubyGems.org Registry Activity Webhooks API](https://apis.io/collections/ruby/open-ruby-webhooks-api/)
+- [RubyGems.org Registry API](https://apis.io/collections/ruby/open-rubygems-registry/)
 
-- [Documentation](https://guides.rubygems.org/rubygems-org-api-v2/)
-- [API Reference](https://guides.rubygems.org/rubygems-org-api-v2/)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (2)
 
-### Bundler
+Spectral rulesets for the provider's contracts.
 
-Dependency manager for Ruby. Reads a Gemfile, resolves and installs gems from rubygems.org or alternate sources, and writes Gemfile.lock for reproducible installs across environments. Ships as part of modern Ruby distributions.
+- [Ruby Programming Language and Popular API Gems — jsonschema rules](https://apis.io/rules/ruby/ruby-jsonschema-spectral-rules/)
+- [Ruby Programming Language and Popular API Gems — rubygems registry rules](https://apis.io/rules/ruby/rubygems-registry-rules/)
 
-- **Human URL:** [https://bundler.io/](https://bundler.io/)
+#### Security (2)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Dependency Management
-- CLI
-- Package Manager
+- [Ruby Authentication](https://apis.io/security/ruby/ruby-authentication/)
+- [Ruby Domain Security](https://apis.io/security/ruby/ruby-domain-security/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://bundler.io/docs.html)
-- [Git Hub](https://github.com/rubygems/rubygems)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### RBS (Ruby Type Signatures)
-
-A language for describing the structure of Ruby programs. Lets developers declare classes, modules, method signatures, instance variables and inheritance in separate .rbs files so type checkers and IDE tooling can verify code against an explicit contract.
-
-- **Human URL:** [https://github.com/ruby/rbs](https://github.com/ruby/rbs)
-
-#### Tags
-
-- Type System
-- Schema
-- Contracts
-
-#### Properties
-
-- [Git Hub](https://github.com/ruby/rbs)
-- [Documentation](https://github.com/ruby/rbs#readme)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Faraday
-
-Simple but flexible HTTP client library with a common interface over many adapters (Net::HTTP, Typhoeus, Patron, Excon, HTTPClient, and others) and Rack-style middleware for request/response processing.
-
-- **Human URL:** [https://lostisland.github.io/faraday/](https://lostisland.github.io/faraday/)
-
-#### Tags
-
-- HTTP Client
-- Middleware
-
-#### Properties
-
-- [Documentation](https://lostisland.github.io/faraday/)
-- [Git Hub](https://github.com/lostisland/faraday)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### HTTParty
-
-HTTP client gem that "makes consuming RESTful web services dead easy" via a class-level DSL. Wraps Net::HTTP with parsing, query handling, and authentication helpers.
-
-- **Human URL:** [https://github.com/jnunemaker/httparty](https://github.com/jnunemaker/httparty)
-
-#### Tags
-
-- HTTP Client
-- REST
-
-#### Properties
-
-- [Git Hub](https://github.com/jnunemaker/httparty)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### http.rb
-
-Fast Ruby HTTP client built on the llhttp parser with a chainable request-building API, streaming bodies, persistent connections, and fine-grained timeout control.
-
-- **Human URL:** [https://github.com/httprb/http](https://github.com/httprb/http)
-
-#### Tags
-
-- HTTP Client
-- Streaming
-
-#### Properties
-
-- [Git Hub](https://github.com/httprb/http)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Excon
-
-EXtended HTTP(S) CONnections library focused on performance, persistent connections, and predictable behavior. Used as an adapter under Faraday and inside Fog/cloud SDKs.
-
-- **Human URL:** [https://github.com/excon/excon](https://github.com/excon/excon)
-
-#### Tags
-
-- HTTP Client
-
-#### Properties
-
-- [Git Hub](https://github.com/excon/excon)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Typhoeus
-
-Libcurl-based HTTP client built for running HTTP requests in parallel. Pairs well with Hydra for fan-out integrations against many APIs at once.
-
-- **Human URL:** [https://github.com/typhoeus/typhoeus](https://github.com/typhoeus/typhoeus)
-
-#### Tags
-
-- HTTP Client
-- Parallel
-
-#### Properties
-
-- [Git Hub](https://github.com/typhoeus/typhoeus)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### REST Client
-
-Simple HTTP and REST client for Ruby inspired by Sinatra's microframework style. Provides class-level GET/POST/PUT/DELETE helpers.
-
-- **Human URL:** [https://github.com/rest-client/rest-client](https://github.com/rest-client/rest-client)
-
-#### Tags
-
-- HTTP Client
-- REST
-
-#### Properties
-
-- [Git Hub](https://github.com/rest-client/rest-client)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### HTTPClient
-
-Long-standing Ruby HTTP client providing "the functionality of libwww-perl (LWP) in Ruby". Supports keep-alive, cookies, proxies, and SSL.
-
-- **Human URL:** [https://github.com/nahi/httpclient](https://github.com/nahi/httpclient)
-
-#### Tags
-
-- HTTP Client
-
-#### Properties
-
-- [Git Hub](https://github.com/nahi/httpclient)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Ruby on Rails (API Mode)
-
-Rails generated with the --api flag boots a slimmer middleware stack and an ApplicationController inheriting from ActionController::API (rather than ActionController::Base), making Rails a first-class JSON API framework while keeping Active Record, routing, and generators.
-
-- **Human URL:** [https://guides.rubyonrails.org/api_app.html](https://guides.rubyonrails.org/api_app.html)
-
-#### Tags
-
-- Web Framework
-- REST
-- JSON API
-
-#### Properties
-
-- [Documentation](https://guides.rubyonrails.org/api_app.html)
-- [Git Hub](https://github.com/rails/rails)
-- [Website](https://rubyonrails.org/)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Sinatra
-
-"DSL for quickly creating web applications in Ruby with minimal effort." Widely used to stand up small HTTP APIs and microservices without the ceremony of a full-stack framework.
-
-- **Human URL:** [https://sinatrarb.com/](https://sinatrarb.com/)
-
-#### Tags
-
-- Web Framework
-- Microframework
-- DSL
-
-#### Properties
-
-- [Documentation](https://sinatrarb.com/documentation.html)
-- [Git Hub](https://github.com/sinatra/sinatra)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Grape
-
-"Opinionated framework for creating REST-like APIs in Ruby." Provides a routing DSL with parameter validation, versioning, and content-negotiation helpers; runs standalone or mounted in Rails.
-
-- **Human URL:** [https://github.com/ruby-grape/grape](https://github.com/ruby-grape/grape)
-
-#### Tags
-
-- Web Framework
-- REST
-- DSL
-
-#### Properties
-
-- [Git Hub](https://github.com/ruby-grape/grape)
-- [Documentation](https://github.com/ruby-grape/grape#readme)
-- [Postman Collection](collections/rubygems-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/rubygems-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Spectral Rules](rules/rubygems-registry-rules.yml)
-- [Vocabulary](vocabulary/ruby-vocabulary.yml)
-- [J S O N- L D](json-ld/ruby-context.jsonld)
 - [Website](https://www.ruby-lang.org/)
 - [Documentation](https://docs.ruby-lang.org/en/)
-- [Getting Started](https://www.ruby-lang.org/en/documentation/quickstart/)
-- [Downloads](https://www.ruby-lang.org/en/downloads/)
-- [Release Notes](https://www.ruby-lang.org/en/news/)
-- [Security](https://www.ruby-lang.org/en/security/)
-- [Community](https://www.ruby-lang.org/en/community/)
+- [Getting started](https://www.ruby-lang.org/en/documentation/quickstart/)
 - [Blog](https://www.ruby-lang.org/en/news/)
-- [GitHub Organization](https://github.com/ruby)
-- [GitHub Organization](https://github.com/rubygems)
-- [GitHub Organization](https://github.com/rails)
-- [Source Code](https://github.com/ruby/ruby)
-- [Registry](https://rubygems.org/)
-- [Status Page](https://status.rubygems.org/)
-- [Blog](https://blog.rubygems.org/)
-- [License](https://www.ruby-lang.org/en/about/license.txt)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Solutions](undefined)
+- [Security](https://www.ruby-lang.org/en/security/)
+- [GitHub](https://github.com/ruby)
+- [Status](https://status.rubygems.org/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 40.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 66.2 |
+| Contract governance | 27.3 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 52.4 |
+| Access clarity | 0.0 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ruby/](https://apis.io/providers/ruby/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ruby Programming Language and Popular API Gems: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ruby/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
